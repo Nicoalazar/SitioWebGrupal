@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitácora de desarrollo — Grupo 15</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="bitacora.html" aria-current="page">Bitácora</a></li>
+          <!-- Sprint 2: agregar enlaces a los perfiles individuales -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <h1>Bitácora de desarrollo</h1>
+      <p>
+        Registro cronológico de decisiones, dificultades y cambios durante el desarrollo del sitio.
+        Cada sprint suma al menos una entrada con fecha real.
+      </p>
+
+      <!-- Las entradas se agregan en orden cronológico inverso: la más reciente arriba -->
+
+      <article class="bitacora-entry">
+        <time datetime="2026-09-14">14 de septiembre de 2026</time>
+        <h2>Sprint 0 — Gobernanza del proyecto</h2>
+
+        <h3>Decisiones</h3>
+        <ul>
+          <li>Creamos el repositorio público e independiente <strong>SitioWebGrupal</strong> en GitHub.</li>
+          <li>Definimos el stack: HTML5, CSS3 y JavaScript vanilla, sin frameworks. Publicación en Vercel.</li>
+          <li>Acordamos convenciones: <strong>Conventional Commits</strong> para los mensajes, ramas por issue y merge a <code>main</code> vía Pull Request. Quedaron documentadas en el README.</li>
+          <li>Creamos el GitHub Project con columnas Backlog / En progreso / Review / Done y cargamos cada sprint del plan como issue (#1 a #7).</li>
+          <li>Armamos la estructura de carpetas: páginas HTML en la raíz, <code>/css</code>, <code>/js</code> e <code>/img</code>.</li>
+          <li>Definimos los roles del equipo: portada, paleta/tipografía, template de perfil, bitácora/documentación, y cada integrante dueño de su propia página.</li>
+          <li>Fijamos el canal de comunicación del equipo: <em>[a completar]</em>.</li>
+          <li>Con la fecha de entrega confirmada (<strong>lunes 28/09</strong>), armamos el calendario de sprints trabajando hacia atrás: Sprint 1 y 2 en paralelo (15–19/09), Sprint 3 (21–23/09), Sprint 4 (24–25/09) y Sprint 5 (26/09), dejando el domingo 27 como margen.</li>
+        </ul>
+
+        <h3>Dificultades</h3>
+        <ul>
+          <li>Somos 5 integrantes y el plazo total es de dos semanas: decidimos correr los Sprints 1 y 2 en paralelo para no dejar los perfiles individuales para el final.</li>
+        </ul>
+
+        <h3>Próximos pasos</h3>
+        <ul>
+          <li>Cada integrante hace su primer commit agregando su nombre y perfil de GitHub al README.</li>
+          <li>Sprint 1: definir paleta y Google Fonts, construir la portada y el componente de navegación.</li>
+        </ul>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Grupo 15 · TP1 Desarrollo de Sistemas Web · 2026 2C · <a href="index.html">Volver al inicio</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
