@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo 15 — Sitio Web Grupal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
 
@@ -17,14 +21,62 @@
           <!-- Sprint 2: agregar enlaces a los perfiles individuales -->
         </ul>
       </nav>
+      <img class="site-logo" src="img/logo-agencia.png.jpg" alt="Buenos Aires Aprende y Agencia de Habilidades para el Futuro">
     </div>
   </header>
 
   <main class="site-main">
     <div class="container">
-      <!-- Sprint 1: portada real — nombre del equipo, propósito, listado de integrantes con enlaces -->
-      <h1>Grupo 15</h1>
-      <p>Portada en construcción. Ver la <a href="bitacora.html">bitácora</a> para seguir el proceso.</p>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Desarrollo de Sistemas Web · 2026</p>
+          <h1 id="page-title">Conocé al Grupo 15</h1>
+          <p>Un equipo que aprende haciendo, comparte ideas y convierte el proceso de desarrollo en una experiencia para recorrer.</p>
+          <a class="hero-button" href="#members-title">Conocer al equipo</a>
+        </div>
+        <div class="hero-preview" aria-label="Presentación visual del equipo">
+          <span class="preview-dot preview-dot-one"></span>
+          <span class="preview-dot preview-dot-two"></span>
+          <div class="preview-panel">
+            <span>GRUPO 15</span>
+            <strong>Personas, ideas<br>y código.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section" aria-labelledby="features-title">
+        <p class="eyebrow">Lo que vas a encontrar</p>
+        <h2 id="features-title">Una mirada al equipo</h2>
+        <div class="feature-grid">
+          <article><span class="feature-icon">01</span><h3>Perfiles</h3><p>Conocé las historias e intereses de cada integrante.</p></article>
+          <article><span class="feature-icon">02</span><h3>Proceso</h3><p>Seguimos las decisiones y aprendizajes en la bitácora.</p></article>
+          <article><span class="feature-icon">03</span><h3>Diseño</h3><p>Construimos una identidad visual compartida.</p></article>
+          <article><span class="feature-icon">04</span><h3>Equipo</h3><p>Una portada común para cinco recorridos distintos.</p></article>
+        </div>
+      </section>
+
+      <section class="members-section" aria-labelledby="members-title">
+        <div class="members-toolbar">
+          <div><p class="eyebrow">Explorá</p><h2 id="members-title">Conocé al equipo</h2></div>
+          <label>
+            <span class="visually-hidden">Buscar integrante</span>
+            <input class="member-search" type="search" placeholder="Buscar integrante" data-member-search>
+          </label>
+        </div>
+        <div class="member-grid" data-member-list>
+          <article class="member-card" data-member="nicolás zalazar"><h3>Nicolás Zalazar</h3><p>Perfil y recorrido personal.</p><a href="nicolas-zalazar.html">Ver perfil</a></article>
+          <article class="member-card" data-member="laura belén blanco"><h3>Laura Belén Blanco</h3><p>Perfil y recorrido personal.</p><a href="laura-blanco.html">Ver perfil</a></article>
+          <article class="member-card" data-member="christian albornoz"><h3>Christian Albornoz</h3><p>Perfil y recorrido personal.</p><a href="christian-albornoz.html">Ver perfil</a></article>
+          <article class="member-card" data-member="laura olivera"><h3>Laura Olivera</h3><p>Perfil y recorrido personal.</p><a href="laura-olivera.html">Ver perfil</a></article>
+          <article class="member-card" data-member="fernando guevara"><h3>Fernando Guevara</h3><p>Perfil y recorrido personal.</p><a href="fernando-guevara.html">Ver perfil</a></article>
+        </div>
+        <p class="empty-state" data-empty-state hidden>No encontramos integrantes con ese nombre.</p>
+      </section>
+
+      <section class="journal-banner" aria-labelledby="journal-title">
+        <div><p class="eyebrow">Detrás de escena</p><h2 id="journal-title">Cada sprint deja una historia.</h2></div>
+        <a class="hero-button" href="bitacora.html">Leer la bitácora</a>
+      </section>
     </div>
   </main>
 
@@ -34,5 +86,6 @@
     </div>
   </footer>
 
+  <script src="js/portada.js"></script>
 </body>
 </html>

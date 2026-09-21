@@ -1,23 +1,29 @@
 /* ==========================================================================
-   base.css — estilos globales del sitio
-   Sprint 0: reset mínimo + variables provisorias.
-   Sprint 1: reemplazar los valores de :root por la paleta y tipografía
-   definitivas (documentarlas en README → Guía de estilos).
+  base.css — sistema visual compartido del sitio
    ========================================================================== */
 
 :root {
-  /* Paleta provisoria — a reemplazar en Sprint 1 */
-  --color-primary: #2b2d42;
-  --color-secondary: #8d99ae;
-  --color-accent: #ef233c;
-  --color-bg: #edf2f4;
+  --color-primary: #173f5f;
+  --color-secondary: #20639b;
+  --color-accent: #f6c85f;
+  --color-bg: #f4f0e8;
+  --color-bg-alt: #e7eef0;
   --color-surface: #ffffff;
-  --color-text: #2b2d42;
-  --color-text-muted: #5c6370;
+  --color-text: #17202a;
+  --color-text-muted: #5d6873;
+  --color-hero-start: #3478d4;
+  --color-hero-mid: #4630d7;
+  --color-hero-end: #3520ad;
+  --color-hero-soft: #c5e9ff;
+  --color-hero-overlay: rgb(255 255 255 / 12%);
+  --color-feature: #54d5ed;
+  --color-shadow: rgb(20 20 80 / 25%);
+  --color-card-shadow: rgb(23 63 95 / 10%);
+  --color-journal: #9aaec8;
+  --color-journal-soft: #e3f5ff;
 
-  /* Tipografía provisoria — Google Fonts se define en Sprint 1 */
-  --font-heading: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
 
   /* Espaciado y layout */
   --space-xs: 0.25rem;
@@ -25,7 +31,7 @@
   --space-md: 1rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   --max-width: 1200px;
 }
 
@@ -40,7 +46,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-bg), var(--color-bg-alt));
   line-height: 1.6;
 }
 
@@ -50,6 +56,11 @@ h3 {
   font-family: var(--font-heading);
   line-height: 1.2;
   margin: 0 0 var(--space-sm);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  max-width: 10ch;
 }
 
 a {
@@ -68,35 +79,268 @@ img {
   padding: 0 var(--space-md);
 }
 
-/* Navegación — componente reusable en todas las páginas */
-.site-header {
-  background-color: var(--color-primary);
-  color: var(--color-surface);
-  padding: var(--space-md) 0;
+.site-main {
+  min-height: calc(100vh - 150px);
+  padding: clamp(2rem, 7vw, 5rem) 0;
 }
 
-.site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.hero {
+  align-items: end;
+  background: linear-gradient(125deg, var(--color-hero-start), var(--color-hero-mid) 70%, var(--color-hero-end));
+  border-radius: var(--radius);
+  color: var(--color-surface);
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  min-height: 31rem;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 5rem);
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  background: var(--color-hero-overlay);
+  border-radius: 50%;
+  content: "";
+  height: 22rem;
+  position: absolute;
+  width: 22rem;
+}
+
+.hero::before {
+  left: -9rem;
+  top: -11rem;
+}
+
+.hero::after {
+  bottom: -14rem;
+  right: -5rem;
+}
+
+.hero-copy,
+.hero-preview {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .eyebrow {
+  color: var(--color-hero-soft);
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  margin-bottom: var(--space-md);
+}
+
+.hero-copy > p:not(.eyebrow) {
+  max-width: 34rem;
+}
+
+.hero-button {
+  background: var(--color-accent);
+  border-radius: 2rem;
+  color: var(--color-primary);
+  display: inline-block;
+  font-weight: 700;
+  margin-top: var(--space-md);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+  background: var(--color-surface);
+}
+
+.hero-preview {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 17rem;
+}
+
+.preview-panel {
+  background: var(--color-surface);
+  box-shadow: 0 20px 35px var(--color-shadow);
+  color: var(--color-primary);
+  padding: 2.5rem 2rem;
+  transform: rotate(3deg);
+  width: min(100%, 19rem);
+}
+
+.preview-panel span {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.preview-panel strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: var(--space-lg);
+}
+
+.preview-dot {
+  background: var(--color-feature);
+  border-radius: 50%;
+  height: 4rem;
+  position: absolute;
+  width: 4rem;
+}
+
+.preview-dot-one { right: 9%; top: 5%; }
+.preview-dot-two { bottom: 6%; left: 7%; height: 2rem; width: 2rem; }
+
+.feature-section {
+  background: var(--color-surface);
+  margin: 0 calc(var(--space-md) * -1);
+  padding: clamp(3rem, 7vw, 5rem) var(--space-md);
+  text-align: center;
+}
+
+.feature-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.feature-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(4, 1fr);
+  margin: var(--space-xl) auto 0;
+  max-width: 1000px;
+}
+
+.feature-grid article p {
+  color: var(--color-text-muted);
+  margin: 0 auto;
+  max-width: 13rem;
+}
+
+.feature-icon {
+  align-items: center;
+  background: var(--color-feature);
+  border-radius: 50%;
+  color: var(--color-primary);
+  display: inline-flex;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  height: 4.5rem;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  width: 4.5rem;
+}
+
+.journal-banner {
+  align-items: center;
+  background: var(--color-journal);
+  color: var(--color-surface);
+  display: flex;
+  justify-content: space-between;
+  margin: var(--space-xl) 0;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.journal-banner .eyebrow {
+  color: var(--color-journal-soft);
+}
+
+.eyebrow {
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 48rem;
+}
+
+.hero-note {
+  background: var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-surface);
+  padding: var(--space-lg);
+}
+
+.members-section {
+  margin-top: clamp(3rem, 8vw, 6rem);
+}
+
+.members-toolbar {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-md);
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
 }
 
-.site-nav a {
-  color: var(--color-surface);
-  text-decoration: none;
-  font-weight: 600;
+.member-search {
+  border: 2px solid var(--color-secondary);
+  border-radius: 2rem;
+  font: inherit;
+  min-width: min(100%, 18rem);
+  padding: 0.7rem 1rem;
 }
 
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  text-decoration: underline;
+.member-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.site-main {
-  padding: var(--space-lg) 0;
+.member-card {
+  background: var(--color-surface);
+  border-top: 5px solid var(--color-accent);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px var(--color-card-shadow);
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: var(--space-lg);
+}
+
+.member-card h3 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+
+.member-card a {
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.member-card[hidden],
+.empty-state[hidden] {
+  display: none;
+}
+
+.empty-state {
+  color: var(--color-text-muted);
+  margin-top: var(--space-lg);
+}
+
+.profile-intro {
+  background: var(--color-surface);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .site-footer {
@@ -126,4 +370,35 @@ img {
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero {
+    min-height: 0;
+    padding: 2rem 1.25rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
 }
