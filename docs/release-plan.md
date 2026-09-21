@@ -68,7 +68,7 @@ El domingo 27/09 queda como margen para imprevistos: no se planifican tareas ese
 **Dependencia:** Sprint 0 cerrado (estructura de carpetas y roles definidos).
 
 - [ ] Definir paleta de colores (hex) y tipografía de Google Fonts — documentarlas en el README apenas se elijan, no después
-- [ ] Crear `styles/base.css` con variables CSS (`:root { --color-primary: ... }`) para reuso en todas las páginas
+- [ ] Crear `css/base.css` con variables CSS (`:root { --color-primary: ... }`) para reuso en todas las páginas
 - [ ] Construir `index.html`: nombre del equipo, propósito, listado completo de integrantes con links funcionales a sus páginas individuales
 - [ ] Construir componente de navegación (menú) reusable, pensado para copiar/pegar en portada, perfiles y bitácora sin romper enlaces
 - [ ] Implementar al menos una interacción dinámica en la portada (ideas con peso real: filtro/búsqueda del listado de integrantes, dark mode toggle, carrusel de "sobre el equipo" — evitar `alert()` decorativo)

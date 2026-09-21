@@ -28,9 +28,7 @@
 
 ## 1. Descripción del proyecto
 
-<!-- Sprint 1: completar con el propósito real del equipo -->
-
-[Descripción breve del equipo y del propósito del sitio. ¿Quiénes somos? ¿Qué nos une? ¿Qué queremos mostrar en este sitio?]
+Somos un equipo de cinco estudiantes que aprende haciendo. Este sitio presenta nuestras habilidades e intereses y registra las decisiones tomadas durante el desarrollo del TP1.
 
 El sitio se compone de:
 
@@ -135,7 +133,8 @@ SitioWebGrupal/
 ├── laura-olivera.html
 ├── fernando-guevara.html
 ├── css/
-│   └── base.css               # Variables CSS, reset y estilos globales (Sprint 1)
+│   ├── base.css               # Variables CSS, reset y estilos globales (Sprint 1)
+│   └── nav.css                # Estilos reutilizables de navegación (Sprint 1)
 ├── js/
 │   └── portada.js             # Interacción de la portada (Sprint 1)
 ├── img/                       # Fotos, avatares, íconos, capturas
@@ -151,28 +150,26 @@ SitioWebGrupal/
 
 ## 7. Guía de estilos
 
-<!-- Sprint 1: completar apenas se decidan paleta y fuentes -->
-
 ### Paleta de colores
 
 | Variable CSS | Hex | Uso |
 |---|---|---|
-| `--color-primary` | `#______` | [a definir] |
-| `--color-secondary` | `#______` | [a definir] |
-| `--color-accent` | `#______` | [a definir] |
-| `--color-bg` | `#______` | Fondo general |
-| `--color-text` | `#______` | Texto principal |
+| `--color-primary` | `#173f5f` | Header y bloques destacados |
+| `--color-secondary` | `#20639b` | Enlaces y etiquetas |
+| `--color-accent` | `#f6c85f` | Acentos y estados activos |
+| `--color-bg` | `#f4f0e8` | Fondo general |
+| `--color-text` | `#17202a` | Texto principal |
 
 ### Tipografía (Google Fonts)
 
 | Uso | Fuente | Pesos |
 |---|---|---|
-| Títulos | [a definir] | [a definir] |
-| Cuerpo | [a definir] | [a definir] |
+| Títulos | Space Grotesk | 500, 600, 700 |
+| Cuerpo | DM Sans | 400, 500, 700 |
 
 ### Iconografía
 
-[a definir — ej. set de íconos SVG propios / librería utilizada y criterio de uso]
+No se utiliza una librería de íconos en Sprint 1. Los enlaces se presentan como texto para priorizar claridad y accesibilidad.
 
 ### Breakpoints
 
@@ -190,12 +187,12 @@ SitioWebGrupal/
 
 ### Portada
 
-**Función:** [nombre]
+**Función:** búsqueda y filtrado de integrantes
 **Archivo:** `js/portada.js`
-**Qué hace:** [descripción]
-**Por qué la elegimos:** [criterio]
+**Qué hace:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
+**Por qué la elegimos:** permite encontrar rápidamente un perfil y aporta una interacción útil para una portada con varios integrantes.
 
-![Captura portada](img/capturas/portada-funcion.png)
+Captura pendiente de agregar durante la revisión visual del Sprint 3.
 
 ### Perfil — Nicolás Zalazar
 

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bitácora de desarrollo — Grupo 15</title>
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
 
@@ -14,9 +15,9 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="bitacora.html" aria-current="page">Bitácora</a></li>
-          <!-- Sprint 2: agregar enlaces a los perfiles individuales -->
         </ul>
       </nav>
+      <img class="site-logo" src="img/logo-agencia.png.jpg" alt="Buenos Aires Aprende y Agencia de Habilidades para el Futuro">
     </div>
   </header>
 
@@ -55,6 +56,25 @@
         <ul>
           <li>Cada integrante hace su primer commit agregando su nombre y perfil de GitHub al README.</li>
           <li>Sprint 1: definir paleta y Google Fonts, construir la portada y el componente de navegación.</li>
+        </ul>
+      </article>
+
+      <article class="bitacora-entry">
+        <time datetime="2026-09-21">21 de septiembre de 2026</time>
+        <h2>Sprint 1 — Portada y sistema visual base</h2>
+
+        <h3>Decisiones</h3>
+        <ul>
+          <li>Elegimos una paleta de azul profundo, azul medio, amarillo y fondo marfil para transmitir identidad de equipo sin perder contraste.</li>
+          <li>Elegimos <strong>Space Grotesk</strong> para títulos y <strong>DM Sans</strong> para textos: la primera aporta personalidad y la segunda mantiene la lectura cómoda.</li>
+          <li>Separamos la navegación en <code>css/nav.css</code> para copiar la misma estructura en portada, perfiles y bitácora.</li>
+          <li>Implementamos un buscador de integrantes en la portada. Filtra las tarjetas mientras se escribe y muestra un estado vacío si no hay coincidencias.</li>
+        </ul>
+
+        <h3>Próximos pasos</h3>
+        <ul>
+          <li>Agregar los datos y contenidos de las cinco páginas individuales durante el Sprint 2.</li>
+          <li>Probar la navegación y el diseño en 400px, 900px y 1200px.</li>
         </ul>
       </article>
 
