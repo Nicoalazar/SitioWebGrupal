@@ -192,7 +192,7 @@ No se utiliza una librería de íconos en Sprint 1. Los enlaces se presentan com
 **Qué hace:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
 **Por qué la elegimos:** permite encontrar rápidamente un perfil y aporta una interacción útil para una portada con varios integrantes.
 
-Captura pendiente de agregar durante la revisión visual del Sprint 3.
+![Captura del filtro de integrantes](img/capturas/portada-funcion.png)
 
 ### Perfil — Nicolás Zalazar
 

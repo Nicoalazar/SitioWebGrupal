@@ -67,13 +67,13 @@ El domingo 27/09 queda como margen para imprevistos: no se planifican tareas ese
 ## Sprint 1 — Arquitectura, portada y sistema visual base · **Mar 15/09 → Sáb 19/09** (en paralelo con Sprint 2)
 **Dependencia:** Sprint 0 cerrado (estructura de carpetas y roles definidos).
 
-- [ ] Definir paleta de colores (hex) y tipografía de Google Fonts — documentarlas en el README apenas se elijan, no después
-- [ ] Crear `css/base.css` con variables CSS (`:root { --color-primary: ... }`) para reuso en todas las páginas
-- [ ] Construir `index.html`: nombre del equipo, propósito, listado completo de integrantes con links funcionales a sus páginas individuales
-- [ ] Construir componente de navegación (menú) reusable, pensado para copiar/pegar en portada, perfiles y bitácora sin romper enlaces
-- [ ] Implementar al menos una interacción dinámica en la portada (ideas con peso real: filtro/búsqueda del listado de integrantes, dark mode toggle, carrusel de "sobre el equipo" — evitar `alert()` decorativo)
-- [ ] Documentar esa función JS en el README (qué hace, por qué, captura de pantalla)
-- [ ] Actualizar bitácora: decisiones de paleta/tipografía y por qué se eligieron
+- [x] Definir paleta de colores (hex) y tipografía de Google Fonts — documentarlas en el README apenas se elijan, no después
+- [x] Crear `css/base.css` con variables CSS (`:root { --color-primary: ... }`) para reuso en todas las páginas
+- [x] Construir `index.html`: nombre del equipo, propósito, listado completo de integrantes con links funcionales a sus páginas individuales
+- [x] Construir componente de navegación (menú) reusable, pensado para copiar/pegar en portada, perfiles y bitácora sin romper enlaces
+- [x] Implementar al menos una interacción dinámica en la portada (ideas con peso real: filtro/búsqueda del listado de integrantes, dark mode toggle, carrusel de "sobre el equipo" — evitar `alert()` decorativo)
+- [x] Documentar esa función JS en el README (qué hace, por qué, captura de pantalla)
+- [x] Actualizar bitácora: decisiones de paleta/tipografía y por qué se eligieron
 
 **Affected files:** `index.html`, `css/base.css`, `css/nav.css`, `js/portada.js`, `README.md`, `bitacora.html`
 

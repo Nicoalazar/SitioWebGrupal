@@ -34,12 +34,14 @@
 }
 
 .site-logo {
+  background: var(--color-surface);
+  border-radius: var(--radius);
   display: block;
   height: auto;
-  mix-blend-mode: multiply;
   max-height: 3.5rem;
   max-width: min(100%, 15rem);
   object-fit: contain;
+  padding: 0.25rem 0.5rem;
 }
 
 @media (max-width: 400px) {
