@@ -137,7 +137,9 @@ SitioWebGrupal/
 │   └── nav.css                # Estilos reutilizables de navegación (Sprint 1)
 ├── js/
 │   └── portada.js             # Interacción de la portada (Sprint 1)
-├── img/                       # Fotos, avatares, íconos, capturas
+├── img/
+│   ├── perfiles/              # Fotos o avatares de los integrantes (Sprint 2)
+│   └── capturas/              # Evidencias de las funciones JavaScript
 ├── docs/
 │   └── release-plan.md        # Plan de sprints del equipo
 ├── .github/
@@ -178,6 +180,37 @@ No se utiliza una librería de íconos en Sprint 1. Los enlaces se presentan com
 | Mobile | `400px` | Celular |
 | Tablet | `900px` | Tablet / celular apaisado |
 | Desktop | `1200px` | Escritorio |
+
+### Cómo crear un perfil
+
+Todos los perfiles deben reutilizar `css/base.css` y `css/nav.css`. Para mantener la identidad visual, no se deben inventar colores directamente en cada HTML.
+
+Estructura mínima recomendada:
+
+```html
+<main class="site-main">
+	<div class="container">
+		<section class="profile-intro">
+			<img class="profile-photo" src="img/perfiles/nombre-apellido.jpg" alt="Foto de Nombre Apellido">
+			<p class="eyebrow">Perfil del equipo</p>
+			<h1>Nombre Apellido</h1>
+			<p>Descripción breve del integrante.</p>
+		</section>
+	</div>
+</main>
+```
+
+Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clases existentes y variables de `:root`, por ejemplo `service-card--featured`, `hero-button` y `profile-photo`. Si se necesita una nueva variante, se agrega primero a `css/base.css` para que pueda reutilizarla todo el equipo.
+
+### Accesibilidad y responsive
+
+- Las páginas usan HTML semántico, `lang="es"` y navegación compartida.
+- El enlace "Saltar al contenido principal" permite navegar con teclado.
+- Los controles interactivos tienen foco visible y nombres comprensibles.
+- El buscador tiene etiqueta accesible y el carrusel comunica su posición con `aria-live`.
+- Se respeta `prefers-reduced-motion` para reducir las transiciones.
+- La portada se probó en 400px, 768px y 1200px sin overflow horizontal.
+- Las fotos de perfiles deben tener texto alternativo y los controles deben poder usarse con teclado y tacto.
 
 ---
 

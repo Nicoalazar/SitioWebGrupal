@@ -22,7 +22,8 @@
 }
 
 .site-nav a {
-  color: var(--color-surface);
+  color: var(--color-on-dark);
+  font-size: 1.05rem;
   font-weight: 700;
   text-decoration: none;
 }
