@@ -28,9 +28,7 @@
 
 ## 1. Descripción del proyecto
 
-<!-- Sprint 1: completar con el propósito real del equipo -->
-
-[Descripción breve del equipo y del propósito del sitio. ¿Quiénes somos? ¿Qué nos une? ¿Qué queremos mostrar en este sitio?]
+Somos un equipo de cinco estudiantes que aprende haciendo. Este sitio presenta nuestras habilidades e intereses y registra las decisiones tomadas durante el desarrollo del TP1.
 
 El sitio se compone de:
 
@@ -61,12 +59,12 @@ El sitio se compone de:
 | Rol | Responsable | Alcance |
 |---|---|---|
 | Portada (`index.html`) | [a definir] | Estructura, contenido y función JS de la portada |
-| Paleta y tipografía | [a definir] | Definir colores, Google Fonts e iconografía; mantener `css/base.css` |
+| Paleta y tipografía | Laura Olivera | Definir colores, Google Fonts e iconografía; mantener `css/base.css` |
 | Template de perfil | [a definir] | Diseñar la estructura base que reutilizan todos los perfiles |
 | Bitácora y documentación | [a definir] | Mantener `bitacora.html` y el README actualizados por sprint |
 | Página individual | Cada integrante | Cada persona es dueña de su propio perfil y su función JS |
 
-**Canal de comunicación del equipo:** [a definir — ej. grupo de WhatsApp / Discord]
+**Canal de comunicación del equipo:** grupo de WhatsApp
 **Frecuencia de sincronización:** [a definir — ej. una reunión breve por sprint]
 
 ---
@@ -135,10 +133,13 @@ SitioWebGrupal/
 ├── laura-olivera.html
 ├── fernando-guevara.html
 ├── css/
-│   └── base.css               # Variables CSS, reset y estilos globales (Sprint 1)
+│   ├── base.css               # Variables CSS, reset y estilos globales (Sprint 1)
+│   └── nav.css                # Estilos reutilizables de navegación (Sprint 1)
 ├── js/
 │   └── portada.js             # Interacción de la portada (Sprint 1)
-├── img/                       # Fotos, avatares, íconos, capturas
+├── img/
+│   ├── perfiles/              # Fotos o avatares de los integrantes (Sprint 2)
+│   └── capturas/              # Evidencias de las funciones JavaScript
 ├── docs/
 │   └── release-plan.md        # Plan de sprints del equipo
 ├── .github/
@@ -151,28 +152,26 @@ SitioWebGrupal/
 
 ## 7. Guía de estilos
 
-<!-- Sprint 1: completar apenas se decidan paleta y fuentes -->
-
 ### Paleta de colores
 
 | Variable CSS | Hex | Uso |
 |---|---|---|
-| `--color-primary` | `#______` | [a definir] |
-| `--color-secondary` | `#______` | [a definir] |
-| `--color-accent` | `#______` | [a definir] |
-| `--color-bg` | `#______` | Fondo general |
-| `--color-text` | `#______` | Texto principal |
+| `--color-primary` | `#111746` | Header y bloques destacados |
+| `--color-secondary` | `#342275` | Enlaces y etiquetas |
+| `--color-accent` | `#53d6d2` | Acentos y estados activos |
+| `--color-bg` | `#090d2d` | Fondo general |
+| `--color-text` | `#f6f5ff` | Texto principal |
 
 ### Tipografía (Google Fonts)
 
 | Uso | Fuente | Pesos |
 |---|---|---|
-| Títulos | [a definir] | [a definir] |
-| Cuerpo | [a definir] | [a definir] |
+| Títulos | Space Grotesk | 500, 600, 700 |
+| Cuerpo | DM Sans | 400, 500, 700 |
 
 ### Iconografía
 
-[a definir — ej. set de íconos SVG propios / librería utilizada y criterio de uso]
+No se utiliza una librería de íconos en Sprint 1. Los enlaces se presentan como texto para priorizar claridad y accesibilidad.
 
 ### Breakpoints
 
@@ -182,6 +181,37 @@ SitioWebGrupal/
 | Tablet | `900px` | Tablet / celular apaisado |
 | Desktop | `1200px` | Escritorio |
 
+### Cómo crear un perfil
+
+Todos los perfiles deben reutilizar `css/base.css` y `css/nav.css`. Para mantener la identidad visual, no se deben inventar colores directamente en cada HTML.
+
+Estructura mínima recomendada:
+
+```html
+<main class="site-main">
+	<div class="container">
+		<section class="profile-intro">
+			<img class="profile-photo" src="img/perfiles/nombre-apellido.jpg" alt="Foto de Nombre Apellido">
+			<p class="eyebrow">Perfil del equipo</p>
+			<h1>Nombre Apellido</h1>
+			<p>Descripción breve del integrante.</p>
+		</section>
+	</div>
+</main>
+```
+
+Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clases existentes y variables de `:root`, por ejemplo `service-card--featured`, `hero-button` y `profile-photo`. Si se necesita una nueva variante, se agrega primero a `css/base.css` para que pueda reutilizarla todo el equipo.
+
+### Accesibilidad y responsive
+
+- Las páginas usan HTML semántico, `lang="es"` y navegación compartida.
+- El enlace "Saltar al contenido principal" permite navegar con teclado.
+- Los controles interactivos tienen foco visible y nombres comprensibles.
+- El buscador tiene etiqueta accesible y el carrusel comunica su posición con `aria-live`.
+- Se respeta `prefers-reduced-motion` para reducir las transiciones.
+- La portada se probó en 400px, 768px y 1200px sin overflow horizontal.
+- Las fotos de perfiles deben tener texto alternativo y los controles deben poder usarse con teclado y tacto.
+
 ---
 
 ## 8. Funciones JavaScript
@@ -190,12 +220,12 @@ SitioWebGrupal/
 
 ### Portada
 
-**Función:** [nombre]
+**Función:** búsqueda y filtrado de integrantes
 **Archivo:** `js/portada.js`
-**Qué hace:** [descripción]
-**Por qué la elegimos:** [criterio]
+**Qué hace:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
+**Por qué la elegimos:** permite encontrar rápidamente un perfil y aporta una interacción útil para una portada con varios integrantes.
 
-![Captura portada](img/capturas/portada-funcion.png)
+![Captura del filtro de integrantes](img/capturas/portada-funcion.png)
 
 ### Perfil — Nicolás Zalazar
 
