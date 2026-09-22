@@ -64,7 +64,7 @@ El sitio se compone de:
 | Bitácora y documentación | [a definir] | Mantener `bitacora.html` y el README actualizados por sprint |
 | Página individual | Cada integrante | Cada persona es dueña de su propio perfil y su función JS |
 
-**Canal de comunicación del equipo:** [a definir — ej. grupo de WhatsApp / Discord]
+**Canal de comunicación del equipo:** grupo de WhatsApp
 **Frecuencia de sincronización:** [a definir — ej. una reunión breve por sprint]
 
 ---
