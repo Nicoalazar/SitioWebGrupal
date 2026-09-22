@@ -59,7 +59,7 @@ El sitio se compone de:
 | Rol | Responsable | Alcance |
 |---|---|---|
 | Portada (`index.html`) | [a definir] | Estructura, contenido y función JS de la portada |
-| Paleta y tipografía | [a definir] | Definir colores, Google Fonts e iconografía; mantener `css/base.css` |
+| Paleta y tipografía | Laura Olivera | Definir colores, Google Fonts e iconografía; mantener `css/base.css` |
 | Template de perfil | [a definir] | Diseñar la estructura base que reutilizan todos los perfiles |
 | Bitácora y documentación | [a definir] | Mantener `bitacora.html` y el README actualizados por sprint |
 | Página individual | Cada integrante | Cada persona es dueña de su propio perfil y su función JS |
@@ -156,11 +156,11 @@ SitioWebGrupal/
 
 | Variable CSS | Hex | Uso |
 |---|---|---|
-| `--color-primary` | `#173f5f` | Header y bloques destacados |
-| `--color-secondary` | `#20639b` | Enlaces y etiquetas |
-| `--color-accent` | `#f6c85f` | Acentos y estados activos |
-| `--color-bg` | `#f4f0e8` | Fondo general |
-| `--color-text` | `#17202a` | Texto principal |
+| `--color-primary` | `#111746` | Header y bloques destacados |
+| `--color-secondary` | `#342275` | Enlaces y etiquetas |
+| `--color-accent` | `#53d6d2` | Acentos y estados activos |
+| `--color-bg` | `#090d2d` | Fondo general |
+| `--color-text` | `#f6f5ff` | Texto principal |
 
 ### Tipografía (Google Fonts)
 
