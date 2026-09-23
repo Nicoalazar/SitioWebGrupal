@@ -253,9 +253,9 @@ Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clas
 
 ### Perfil — Laura Olivera
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:** test de resolución bajo presión
+**Archivo:** `js/perfil-laura-olivera.js`
+**Qué hace:** presenta tres situaciones con opciones, calcula un puntaje según las respuestas y muestra un perfil profesional personalizado al finalizar. También permite reiniciar el test.
 
 ![Captura](img/capturas/perfil-laura-olivera.png)
 

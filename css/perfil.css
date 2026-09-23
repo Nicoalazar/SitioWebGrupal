@@ -232,6 +232,81 @@
     color: #ff8ca3;
 }
 
+/* Test de resolución bajo presión de Laura Olivera */
+.pressure-test {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.pressure-test-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.test-progress {
+    margin: var(--space-lg) 0;
+    color: var(--color-muted-on-dark);
+    font-weight: 700;
+}
+
+.test-progress-track {
+    height: 0.45rem;
+    margin-top: var(--space-sm);
+    background: var(--color-bg-alt);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+#test-progress-bar {
+    display: block;
+    height: 100%;
+    width: 33.33%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.test-question {
+    background: rgba(9, 13, 45, 0.55);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+}
+
+.test-question h3 {
+    color: var(--color-on-dark);
+    margin-top: 0;
+}
+
+.test-options {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.test-option {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.test-option:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+}
+
+.test-result {
+    margin: var(--space-lg) 0;
+    color: var(--color-accent);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
 /* Breakpoints requeridos por la consigna (900px y 400px) */
 @media (max-width: 900px) {
     .profile-details-grid {
