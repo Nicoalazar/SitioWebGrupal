@@ -229,9 +229,9 @@ Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clas
 
 ### Perfil — Nicolás Zalazar
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:** Comparador de gustos
+**Archivo:** `js/perfil-nicolas.js`
+**Qué hace:** muestra mis películas y discos favoritos de a una tarjeta por vez; el visitante responde "Me gusta" o "No es lo mío" en cada una y, al terminar el mazo, la página calcula el porcentaje de coincidencia con una barra de progreso y un mensaje que cambia según el nivel de compatibilidad. Incluye un botón para reiniciar el recorrido.
 
 ![Captura](img/capturas/perfil-nicolas.png)
 
