@@ -307,6 +307,135 @@
     font-weight: 700;
 }
 
+/* Interacción Dinámica JS: Comparador de gustos */
+.taste-section {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.taste-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.taste-card-area {
+    margin: var(--space-md) 0 var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.taste-deck-progress {
+    width: 100%;
+    max-width: 22rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    height: 0.5rem;
+    overflow: hidden;
+}
+
+.taste-deck-progress-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.taste-progress {
+    color: var(--color-muted-on-dark);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.taste-card {
+    background: rgba(9, 13, 45, 0.55);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    padding: var(--space-lg) var(--space-xl);
+    text-align: center;
+    min-width: min(100%, 22rem);
+}
+
+.taste-card-type {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0 0 var(--space-xs);
+}
+
+.taste-card h3 {
+    color: var(--color-on-dark);
+    margin: 0 0 var(--space-xs);
+}
+
+.taste-card-meta {
+    color: var(--color-muted-on-dark);
+    margin: 0;
+}
+
+.taste-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.taste-result-area {
+    background: rgba(9, 13, 45, 0.55);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-card-border);
+    padding: var(--space-lg);
+    max-width: 22rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    text-align: center;
+}
+
+.taste-result-percentage {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0;
+    line-height: 1;
+}
+
+.taste-meter {
+    width: 100%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    height: 0.6rem;
+    overflow: hidden;
+}
+
+.taste-meter--compact {
+    max-width: 14rem;
+}
+
+.taste-meter-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.taste-result-message {
+    font-weight: 700;
+    color: var(--color-on-dark);
+    margin: 0;
+}
+
+.taste-result-area #taste-restart {
+    margin-top: var(--space-sm);
+}
+
 /* Breakpoints requeridos por la consigna (900px y 400px) */
 @media (max-width: 900px) {
     .profile-details-grid {
