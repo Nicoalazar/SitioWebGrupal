@@ -317,6 +317,10 @@
         grid-template-columns: 1fr;
     }
 
+    .taste-card {
+        padding: var(--space-lg);
+    }
+
     .quote-container {
         border-right: none;
         border-bottom: 1px solid var(--color-card-border);
