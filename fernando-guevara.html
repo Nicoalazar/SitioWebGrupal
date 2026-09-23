@@ -1,2 +1,94 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Fernando Guevara — Grupo 15</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/nav.css"></head><body><header class="site-header"><div class="container"><nav class="site-nav" aria-label="Navegación principal"><ul><li><a href="index.html">Inicio</a></li><li><a href="bitacora.html">Bitácora</a></li></ul></nav><img class="site-logo" src="img/logo-agencia.png.jpg" alt="Buenos Aires Aprende y Agencia de Habilidades para el Futuro"></div></header><main class="site-main"><div class="container"><section class="profile-intro"><p class="eyebrow">Perfil del equipo</p><h1>Fernando Guevara</h1><p>Contenido personal en construcción para el Sprint 2.</p><a href="index.html">Volver al equipo</a></section></div></main><footer class="site-footer"><div class="container"><p>Grupo 15 · TP1 Desarrollo de Sistemas Web · 2026 2C</p></div></footer></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fernando Guevara — Grupo 15</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="bitacora.html">Bitácora</a></li>
+        </ul>
+      </nav>
+      <img class="site-logo" src="img/logo-agencia.png.jpg" alt="Buenos Aires Aprende y Agencia de Habilidades para el Futuro">
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <!-- Tarjeta de presentación con el giro de foto -->
+<section class="profile-intro">
+  <div class="profile-photo-container">
+    <img class="profile-photo" src="img/perfiles/perfil-fernando.jpg" alt="Foto de Fernando Guevara">
+  </div>
+  <p class="eyebrow">Perfil del equipo</p>
+  <h1>Fernando Guevara</h1>
+  
+  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--color-muted-on-dark);">
+    <li>Vicente López</li>
+    <li>37 años</li>
+    <li>Estudiante de la tecnicatura de Desarrollo de Software y cada tanto guitarrista.</li>
+  </ul>
+</section>
+
+      <!-- Cuadros independientes usando la clase .service-card del CSS compartido -->
+      <div style="display: grid; gap: 2rem; margin-top: 3rem;">
+        
+        <!-- Cuadro 1: Habilidades -->
+        <article class="service-card">
+          <h2>Habilidades</h2>
+          <ul class="tags-list" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <li>SQL & Bases de Datos</li>
+            <li>Análisis de Datos</li>
+            <li>Resolutivo</li>
+            <li>Comunicativo</li>
+          </ul>
+        </article>
+
+        <!-- Cuadro 2: Películas favoritas -->
+        <article class="service-card">
+          <h2>Películas favoritas</h2>
+          <ul class="styled-item-list" style="margin: 0; padding-left: 1.2rem;">
+          <li><strong style="color: var(--color-accent);">Big Fish</strong> — Tim Burton (2003)</li>
+          <li><strong style="color: var(--color-accent);">El hijo de la novia</strong> — Juan José Campanella (2001)</li>
+          <li><strong style="color: var(--color-accent);">The Nightmare Before Christmas</strong> — Henry Selick (1993)</li>
+        </ul>
+        </article>
+
+         <!-- Cuadro 3: Discos favoritos -->
+        <article class="service-card">
+          <h2>Discos favoritos</h2>
+        <ul class="discos-list styled-item-list" style="margin: 0; padding-left: 1.2rem;">
+          <li><strong style="color: var(--color-accent);">"Harvest Moon"</strong> — Neil Young (1992)<span class="disco-extra"> — Mi disco preferido indiscutido</span></li>
+          <li><strong style="color: var(--color-accent);">"Reveal"</strong> — R.E.M. (2001)<span class="disco-extra"> — Nostalgia de la adolescencia</span></li>
+          <li><strong style="color: var(--color-accent);">"Guess Who"</strong> — B.B. King (1972) <span class="disco-extra"> — Disco infravalorado del gran rey 🎸</span></li>
+        </ul>
+        <p class="profile-hint" style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 1rem;">Hacé clic (o Enter) en un disco para ver más.</p>
+        </article>
+
+      </div>
+
+      <!-- Enlace para volver -->
+      <div style="margin-top: 3rem;">
+        <a href="index.html">Volver al equipo</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Grupo 15 · TP1 Desarrollo de Sistemas Web · 2026 2C</p>
+    </div>
+  </footer>
+
+  <script src="js/perfil-fer.js" defer></script>
+</body>
+</html>
