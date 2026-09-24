@@ -237,9 +237,10 @@ Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clas
 
 ### Perfil — Laura Belén Blanco
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:**  Encontrá el bug
+**Archivo:** js/perfil-laura-blanco.js
+**Qué hace:** muestra una ficha con datos de mi perfil donde cuatro tienen errores a propósito (un nombre mal escrito, un director equivocado, un año invertido y un precio negativo). El visitante hace clic en los datos que cree incorrectos: si es un bug, se tacha y se explica el error; si no, cuenta como falso positivo. Al encontrar los cuatro bugs se muestra un resumen y se puede volver a jugar.
+Por qué la elegí: trabajo como QA Tester y quise mostrar en qué consiste ese trabajo con una interacción simple.
 
 ![Captura](img/capturas/perfil-laura-blanco.png)
 
