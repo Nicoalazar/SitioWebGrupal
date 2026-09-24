@@ -75,7 +75,7 @@
           <li><strong>"Reveal"</strong><span>R.E.M. (2001)</span><span class="disco-extra"> — Nostalgia de la adolescencia</span></li>
           <li><strong>"Guess Who"</strong><span>B.B. King (1972)</span><span class="disco-extra"> — Disco infravalorado del gran rey 🎸</span></li>
         </ul>
-        <p style="font-size: 0.85rem; color: var(--color-muted-on-dark); margin-top: 1rem;">Hacé clic (o Enter) en un disco para ver más.</p>
+        <p class="discos-hint">Hacé clic (o Enter) en un disco para ver más.</p>
       </article>
     </section>
 
@@ -87,9 +87,9 @@
       </div>
 
       <div class="music-selector" role="group" aria-label="Discos disponibles">
-        <button type="button" class="music-btn is-active" data-disco="harvest">"Harvest Moon"</button>
-        <button type="button" class="music-btn" data-disco="reveal">"Reveal"</button>
-        <button type="button" class="music-btn" data-disco="guesswho">"Guess Who"</button>
+        <button type="button" class="music-btn is-active" data-disco="harvest" aria-pressed="true">"Harvest Moon"</button>
+        <button type="button" class="music-btn" data-disco="reveal" aria-pressed="false">"Reveal"</button>
+        <button type="button" class="music-btn" data-disco="guesswho" aria-pressed="false">"Guess Who"</button>
       </div>
 
       <div class="music-display-area">
@@ -104,6 +104,12 @@
 
   </div>
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Grupo 15 · TP1 Desarrollo de Sistemas Web · 2026 2C</p>
+  </div>
+</footer>
 
 <script src="js/perfil-fer.js"></script>
 </body>

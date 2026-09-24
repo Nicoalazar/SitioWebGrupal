@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
         container.style.transition = 'transform 0.4s ease';
         container.style.cursor = 'pointer';
         container.title = 'Hacé clic para ver el mensaje!';
+        container.setAttribute('tabindex', '0');
+        container.setAttribute('role', 'button');
+        container.setAttribute('aria-label', 'Girar la foto para ver un mensaje');
 
         const fotoHTML = profilePhoto.outerHTML;
 
@@ -56,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let mostrandoTexto = false;
 
-        container.addEventListener('click', () => {
+        const girar = () => {
             container.style.transform = 'rotateY(90deg) scale(0.95)';
 
             setTimeout(() => {
@@ -70,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 container.style.transform = 'rotateY(0deg) scale(1)';
             }, 200);
+        };
+
+        container.addEventListener('click', girar);
+        container.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                girar();
+            }
         });
     }
         // --- 3. RINCÓN MUSICAL: DATO POR DISCO ---
@@ -84,8 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     musicButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
-            musicButtons.forEach((b) => b.classList.remove('is-active'));
+            musicButtons.forEach((b) => {
+                b.classList.remove('is-active');
+                b.setAttribute('aria-pressed', 'false');
+            });
             btn.classList.add('is-active');
+            btn.setAttribute('aria-pressed', 'true');
             musicFact.textContent = datosDiscos[btn.dataset.disco];
         });
     });

@@ -550,6 +550,12 @@
     line-height: 1.6;
 }
 
+.discos-hint {
+    font-size: 0.85rem;
+    color: var(--color-muted-on-dark);
+    margin-top: 1rem;
+}
+
 /* Interacción Dinámica JS: Encontrá el bug (Laura Blanco) */
 .bug-hunt {
     --color-bug: #ff9f9f;
