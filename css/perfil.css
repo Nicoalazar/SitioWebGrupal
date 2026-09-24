@@ -1,0 +1,673 @@
+/* ==========================================================================
+   perfil.css — Estilos específicos para la vista de perfil y su interacción JS
+   ========================================================================== */
+
+/* Barra de navegación secundaria interna */
+.profile-nav-bar,
+.profile-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.profile-pagination {
+    margin-top: var(--space-xl);
+    justify-content: space-between;
+}
+
+/* Encabezado del Perfil */
+.profile-header-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.profile-header-card .profile-photo {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-feature-soft));
+    color: var(--color-primary);
+    object-fit: cover;
+}
+
+.profile-photo-flip-message {
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+}
+
+.profile-meta {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    color: var(--color-muted-on-dark);
+}
+
+.profile-meta li strong {
+    color: var(--color-accent);
+}
+
+/* Grilla de Datos */
+.profile-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+/* Etiquetas de Habilidades */
+.tags-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.tags-list li {
+    background: var(--color-bg-alt);
+    color: var(--color-accent);
+    border: 1px solid var(--color-card-border);
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Listados estilizados (Películas y Discos) */
+.styled-item-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.styled-item-list li {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--color-card-border);
+}
+
+.styled-item-list li:last-child {
+    border-bottom: none;
+}
+
+.styled-item-list strong {
+    color: var(--color-on-dark);
+}
+
+.styled-item-list span {
+    font-size: 0.85rem;
+    color: var(--color-muted-on-dark);
+}
+
+/* Interacción Dinámica JS: Cinefilia */
+.cinema-section {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.cinema-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.cinema-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0 var(--space-lg);
+}
+
+.cinema-btn {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.cinema-btn:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.cinema-btn.is-active {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+}
+
+.cinema-display-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    background: rgba(9, 13, 45, 0.55);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-card-border);
+}
+
+.quote-container {
+    border-right: 1px solid var(--color-card-border);
+    padding-right: var(--space-md);
+}
+
+.animated-quote {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--color-on-dark);
+    margin: var(--space-sm) 0 0;
+    min-height: 4.5rem;
+    line-height: 1.5;
+}
+
+.trivia-prompt {
+    font-weight: 500;
+    color: var(--color-on-dark);
+    margin: var(--space-xs) 0 var(--space-md);
+}
+
+.trivia-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.trivia-opt-btn {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s ease;
+}
+
+.trivia-opt-btn:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    background: var(--color-bg-alt);
+}
+
+.trivia-opt-btn:disabled {
+    cursor: default;
+    opacity: 0.75;
+}
+
+.trivia-opt-btn.is-correct {
+    background: #1b4d3e !important;
+    border-color: #53d6a4 !important;
+    color: #d9ffea !important;
+    font-weight: 700;
+}
+
+.trivia-opt-btn.is-wrong {
+    background: #501d2d !important;
+    border-color: #d65377 !important;
+    color: #ffd9e2 !important;
+}
+
+.trivia-result {
+    margin-top: var(--space-md);
+    font-weight: 700;
+    font-size: 0.95rem;
+    min-height: 1.5rem;
+}
+
+.trivia-result.success {
+    color: #53d6a4;
+}
+
+.trivia-result.error {
+    color: #ff8ca3;
+}
+
+/* Test de resolución bajo presión de Laura Olivera */
+.pressure-test {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.pressure-test-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.test-progress {
+    margin: var(--space-lg) 0;
+    color: var(--color-muted-on-dark);
+    font-weight: 700;
+}
+
+.test-progress-track {
+    height: 0.45rem;
+    margin-top: var(--space-sm);
+    background: var(--color-bg-alt);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+#test-progress-bar {
+    display: block;
+    height: 100%;
+    width: 33.33%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.test-question {
+    background: rgba(9, 13, 45, 0.55);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+}
+
+.test-question h3 {
+    color: var(--color-on-dark);
+    margin-top: 0;
+}
+
+.test-options {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.test-option {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.test-option:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+}
+
+.test-result {
+    margin: var(--space-lg) 0;
+    color: var(--color-accent);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Interacción Dinámica JS: Comparador de gustos */
+.taste-section {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.taste-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.taste-card-area {
+    margin: var(--space-md) 0 var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.taste-deck-progress {
+    width: 100%;
+    max-width: 22rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    height: 0.5rem;
+    overflow: hidden;
+}
+
+.taste-deck-progress-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.taste-progress {
+    color: var(--color-muted-on-dark);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.taste-card {
+    background: rgba(9, 13, 45, 0.55);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    padding: var(--space-lg) var(--space-xl);
+    text-align: center;
+    min-width: min(100%, 22rem);
+}
+
+.taste-card-type {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0 0 var(--space-xs);
+}
+
+.taste-card h3 {
+    color: var(--color-on-dark);
+    margin: 0 0 var(--space-xs);
+}
+
+.taste-card-meta {
+    color: var(--color-muted-on-dark);
+    margin: 0;
+}
+
+.taste-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.taste-result-area {
+    background: rgba(9, 13, 45, 0.55);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-card-border);
+    padding: var(--space-lg);
+    max-width: 22rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    text-align: center;
+}
+
+.taste-result-percentage {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0;
+    line-height: 1;
+}
+
+.taste-meter {
+    width: 100%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    height: 0.6rem;
+    overflow: hidden;
+}
+
+.taste-meter--compact {
+    max-width: 14rem;
+}
+
+.taste-meter-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.taste-result-message {
+    font-weight: 700;
+    color: var(--color-on-dark);
+    margin: 0;
+}
+
+.taste-result-area #taste-restart {
+    margin-top: var(--space-sm);
+}
+
+/* Breakpoints requeridos por la consigna (900px y 400px) */
+@media (max-width: 900px) {
+    .profile-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cinema-display-area {
+        grid-template-columns: 1fr;
+    }
+
+    .taste-card {
+        padding: var(--space-lg);
+    }
+
+    .quote-container {
+        border-right: none;
+        border-bottom: 1px solid var(--color-card-border);
+        padding-right: 0;
+        padding-bottom: var(--space-md);
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-header-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-meta {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    .profile-pagination {
+        flex-direction: column;
+    }
+
+    .profile-pagination a {
+        text-align: center;
+    }
+}
+
+.music-section {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.music-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.music-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0 var(--space-lg);
+}
+
+.music-btn {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.music-btn:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.music-btn.is-active {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+}
+
+.music-display-area {
+    background: rgba(9, 13, 45, 0.55);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-card-border);
+}
+
+.music-fact {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.discos-hint {
+    font-size: 0.85rem;
+    color: var(--color-muted-on-dark);
+    margin-top: 1rem;
+}
+
+/* Interacción Dinámica JS: Encontrá el bug (Laura Blanco) */
+.bug-hunt {
+    --color-bug: #ff9f9f;
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.bug-hunt-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.bug-hunt-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    margin: var(--space-md) 0;
+    color: var(--color-on-dark);
+    font-weight: 700;
+}
+
+.bug-sheet {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.bug-item {
+    width: 100%;
+    display: grid;
+    gap: var(--space-xs);
+    text-align: left;
+    background: rgba(9, 13, 45, 0.55);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    color: var(--color-on-dark);
+    font: inherit;
+    padding: var(--space-md);
+    cursor: pointer;
+}
+
+.bug-item:hover:not(:disabled) {
+    border-color: var(--color-accent);
+}
+
+.bug-item:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.bug-item:disabled {
+    cursor: default;
+}
+
+.bug-item-label {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.bug-item-value {
+    font-weight: 500;
+}
+
+.bug-item-result:empty {
+    display: none;
+}
+
+.bug-item-result {
+    font-size: 0.9rem;
+}
+
+.bug-item.is-bug {
+    border-color: var(--color-bug);
+}
+
+.bug-item.is-bug .bug-item-value {
+    text-decoration: line-through;
+    text-decoration-color: var(--color-bug);
+}
+
+.bug-item.is-bug .bug-item-result {
+    color: var(--color-bug);
+}
+
+.bug-item.is-ok {
+    border-color: var(--color-check);
+    opacity: 0.75;
+}
+
+.bug-item.is-ok .bug-item-result {
+    color: var(--color-check);
+}
+
+.bug-hunt .bug-feedback {
+    margin: var(--space-md) 0 0;
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    background: rgba(9, 13, 45, 0.35);
+    color: var(--color-on-dark);
+}
+
+/* hero-button define display: inline-block y pisa el atributo hidden */
+.bug-hunt [hidden] {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .bug-hunt {
+        padding: var(--space-lg);
+    }
+}

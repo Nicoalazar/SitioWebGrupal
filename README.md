@@ -229,17 +229,18 @@ Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clas
 
 ### Perfil — Nicolás Zalazar
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:** Comparador de gustos
+**Archivo:** `js/perfil-nicolas.js`
+**Qué hace:** muestra mis películas y discos favoritos de a una tarjeta por vez; el visitante responde "Me gusta" o "No es lo mío" en cada una y, al terminar el mazo, la página calcula el porcentaje de coincidencia con una barra de progreso y un mensaje que cambia según el nivel de compatibilidad. Incluye un botón para reiniciar el recorrido.
 
 ![Captura](img/capturas/perfil-nicolas.png)
 
 ### Perfil — Laura Belén Blanco
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:**  Encontrá el bug
+**Archivo:** js/perfil-laura-blanco.js
+**Qué hace:** muestra una ficha con datos de mi perfil donde cuatro tienen errores a propósito (un nombre mal escrito, un director equivocado, un año invertido y un precio negativo). El visitante hace clic en los datos que cree incorrectos: si es un bug, se tacha y se explica el error; si no, cuenta como falso positivo. Al encontrar los cuatro bugs se muestra un resumen y se puede volver a jugar.
+Por qué la elegí: trabajo como QA Tester y quise mostrar en qué consiste ese trabajo con una interacción simple.
 
 ![Captura](img/capturas/perfil-laura-blanco.png)
 
@@ -253,9 +254,9 @@ Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clas
 
 ### Perfil — Laura Olivera
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:** test de resolución bajo presión
+**Archivo:** `js/perfil-laura-olivera.js`
+**Qué hace:** presenta tres situaciones con opciones, calcula un puntaje según las respuestas y muestra un perfil profesional personalizado al finalizar. También permite reiniciar el test.
 
 ![Captura](img/capturas/perfil-laura-olivera.png)
 
