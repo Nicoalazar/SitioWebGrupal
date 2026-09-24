@@ -477,3 +477,119 @@
         text-align: center;
     }
 }
+
+/* Interacción Dinámica JS: Encontrá el bug (Laura Blanco) */
+.bug-hunt {
+    --color-bug: #ff9f9f;
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.bug-hunt-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.bug-hunt-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    margin: var(--space-md) 0;
+    color: var(--color-on-dark);
+    font-weight: 700;
+}
+
+.bug-sheet {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.bug-item {
+    width: 100%;
+    display: grid;
+    gap: var(--space-xs);
+    text-align: left;
+    background: rgba(9, 13, 45, 0.55);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius);
+    color: var(--color-on-dark);
+    font: inherit;
+    padding: var(--space-md);
+    cursor: pointer;
+}
+
+.bug-item:hover:not(:disabled) {
+    border-color: var(--color-accent);
+}
+
+.bug-item:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.bug-item:disabled {
+    cursor: default;
+}
+
+.bug-item-label {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.bug-item-value {
+    font-weight: 500;
+}
+
+.bug-item-result:empty {
+    display: none;
+}
+
+.bug-item-result {
+    font-size: 0.9rem;
+}
+
+.bug-item.is-bug {
+    border-color: var(--color-bug);
+}
+
+.bug-item.is-bug .bug-item-value {
+    text-decoration: line-through;
+    text-decoration-color: var(--color-bug);
+}
+
+.bug-item.is-bug .bug-item-result {
+    color: var(--color-bug);
+}
+
+.bug-item.is-ok {
+    border-color: var(--color-check);
+    opacity: 0.75;
+}
+
+.bug-item.is-ok .bug-item-result {
+    color: var(--color-check);
+}
+
+.bug-hunt .bug-feedback {
+    margin: var(--space-md) 0 0;
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    background: rgba(9, 13, 45, 0.35);
+    color: var(--color-on-dark);
+}
+
+/* hero-button define display: inline-block y pisa el atributo hidden */
+.bug-hunt [hidden] {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .bug-hunt {
+        padding: var(--space-lg);
+    }
+}
