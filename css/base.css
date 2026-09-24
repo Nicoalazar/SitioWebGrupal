@@ -547,7 +547,6 @@ img {
   justify-content: center;
   margin: 0 auto var(--space-md);
   width: var(--profile-photo-size);
-  object-fit: cover;
 }
 
 .member-card[hidden] {

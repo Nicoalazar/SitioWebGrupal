@@ -4,18 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     discos.forEach((disco) => {
         const extra = disco.querySelector('.disco-extra');
-        
+
         if (extra) {
             extra.style.display = 'none';
         }
 
         disco.style.cursor = 'pointer';
-        disco.setAttribute('tabindex', '0'); 
+        disco.setAttribute('tabindex', '0');
         disco.setAttribute('aria-expanded', 'false');
 
         const toggle = () => {
             const expandido = disco.getAttribute('aria-expanded') === 'true';
-            
+
             if (expandido) {
                 if (extra) extra.style.display = 'none';
                 disco.setAttribute('aria-expanded', 'false');
@@ -45,18 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
             container.appendChild(profilePhoto);
             container.className = 'profile-photo-container';
         }
-        
+
         container.style.transition = 'transform 0.4s ease';
         container.style.cursor = 'pointer';
         container.title = 'Hacé clic para ver el mensaje!';
 
         const fotoHTML = profilePhoto.outerHTML;
-        
-        const textoHTML = `
-            <div style="width: 100%; height: 100%; min-height: 120px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; font-size: 0.95rem; background-color: #1a1a2e; color: #00ffcc; border-radius: 12px; box-sizing: border-box; border: 2px solid #00ffcc;">
-                Pase nomás! Sientese como en casa y salú! 🍷
-            </div>
-        `;
+
+        const textoHTML = `<div class="profile-photo-flip-message">Pase nomás! Sientese como en casa y salú! 🍷</div>`;
 
         let mostrandoTexto = false;
 
@@ -65,41 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 mostrandoTexto = !mostrandoTexto;
-                
+
                 if (mostrandoTexto) {
                     container.innerHTML = textoHTML;
                 } else {
                     container.innerHTML = fotoHTML;
                 }
-                
+
                 container.style.transform = 'rotateY(0deg) scale(1)';
             }, 200);
         });
-    }
-
-    // --- 3. CREAR E INYECTAR BOTONES DE NAVEGACIÓN ABAJO ---
-    const navContainer = document.createElement('div');
-    navContainer.style.display = 'flex';
-    navContainer.style.justifyContent = 'space-between';
-    navContainer.style.margin = '35px auto';
-    navContainer.style.width = '100%';
-    navContainer.style.padding = '0';
-
-    navContainer.innerHTML = `
-        <a href="laura-blanco.html" style="background-color: white; color: #1a1a2e; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">← Perfil anterior (Laura Blanco)</a>
-        <a href="laura-olivera.html" style="background-color: white; color: #1a1a2e; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">Siguiente perfil (Laura Olivera) →</a>
-    `;
-
-    let enlaceVolver = null;
-    document.querySelectorAll('a').forEach(a => {
-        if (a.textContent.includes('Volver al equipo')) {
-            enlaceVolver = a;
-        }
-    });
-
-    if (enlaceVolver && enlaceVolver.parentNode) {
-        enlaceVolver.parentNode.insertBefore(navContainer, enlaceVolver);
-    } else {
-        document.body.appendChild(navContainer);
     }
 });
