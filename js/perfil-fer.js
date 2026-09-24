@@ -72,4 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 200);
         });
     }
+        // --- 3. RINCÓN MUSICAL: DATO POR DISCO ---
+    const musicButtons = document.querySelectorAll('.music-btn');
+    const musicFact = document.getElementById('music-fact');
+
+    const datosDiscos = {
+        harvest: '"Harvest Moon" (1992) es considerado la secuela espiritual de "Harvest" (1972): Neil Young la grabó exactamente 20 años después.',
+        reveal: '"Reveal" (2001) es de la etapa de R.E.M. como trío, después de que el baterista Bill Berry dejara la banda en 1997.',
+        guesswho: '"Guess Who" (1972) es uno de los discos de B.B. King con más influencia funk y soul, bastante alejado del blues más tradicional.'
+    };
+
+    musicButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            musicButtons.forEach((b) => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            musicFact.textContent = datosDiscos[btn.dataset.disco];
+        });
+    });
+
+    if (musicFact && musicButtons.length) {
+        musicFact.textContent = datosDiscos[musicButtons[0].dataset.disco];
+    }
 });

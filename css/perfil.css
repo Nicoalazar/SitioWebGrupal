@@ -495,3 +495,57 @@
         text-align: center;
     }
 }
+
+.music-section {
+    margin-top: var(--space-xl);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.music-heading h2 {
+    color: var(--color-on-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.music-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0 var(--space-lg);
+}
+
+.music-btn {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-card-border);
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.music-btn:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.music-btn.is-active {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+}
+
+.music-display-area {
+    background: rgba(9, 13, 45, 0.55);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-card-border);
+}
+
+.music-fact {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.6;
+}
