@@ -309,6 +309,8 @@ Pasos de deploy: [a documentar]
 
 [a completar — modelo utilizado y criterio de los prompts, o "no se usaron"]
 
+- **Christian Albornoz (`perfil-christian-albornoz.jpg`):** Generada con Geminis. Prompt: "Transforma esta imagen en un avatar profesional de alta calidad".
+
 ### Qué revisamos, adaptamos o cambiamos con criterio propio
 
 [a completar con ejemplos concretos — esto es lo que sostiene la autoría del equipo]

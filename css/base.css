@@ -546,7 +546,18 @@ img {
   height: var(--profile-photo-size);
   justify-content: center;
   margin: 0 auto var(--space-md);
+  object-fit: cover;
   width: var(--profile-photo-size);
+}
+
+.profile-photo--image {
+  display: block;
+  object-fit: cover;
+}
+
+.member-card .profile-photo--image {
+  display: block;
+  object-fit: cover;
 }
 
 .member-card[hidden] {
