@@ -133,10 +133,16 @@ SitioWebGrupal/
 ├── laura-olivera.html
 ├── fernando-guevara.html
 ├── css/
-│   ├── base.css               # Variables CSS, reset y estilos globales (Sprint 1)
-│   └── nav.css                # Estilos reutilizables de navegación (Sprint 1)
+│   ├── base.css               # Tokens (:root), reset, layout y componentes de portada
+│   ├── nav.css                # Cabecera y navegación, compartidas por las 7 páginas
+│   └── perfil.css             # Vista de perfil y las 5 interacciones JS (Sprint 2)
 ├── js/
-│   └── portada.js             # Interacción de la portada (Sprint 1)
+│   ├── portada.js             # Buscador y carrusel de la portada (Sprint 1)
+│   ├── perfil-nicolas.js      # Una función por perfil (Sprint 2)
+│   ├── perfil-laura-blanco.js
+│   ├── perfil-christian.js
+│   ├── perfil-laura-olivera.js
+│   └── perfil-fer.js
 ├── img/
 │   ├── perfiles/              # Fotos o avatares de los integrantes (Sprint 2)
 │   └── capturas/              # Evidencias de las funciones JavaScript
@@ -169,36 +175,84 @@ SitioWebGrupal/
 | Títulos | Space Grotesk | 500, 600, 700 |
 | Cuerpo | DM Sans | 400, 500, 700 |
 
+### Escala tipográfica
+
+Ningún `font-size` se escribe suelto: todos salen de estos tokens, definidos en el `:root` de `css/base.css`.
+
+| Variable CSS | Valor | Uso |
+|---|---|---|
+| `--fs-xs` | `0.8rem` | Etiquetas, `.eyebrow`, metadatos |
+| `--fs-sm` | `0.9rem` | Texto secundario, footer, pies de lista |
+| `--fs-base` | `1.05rem` | Cuerpo de texto |
+| `--fs-md` | `1.15rem` | Texto destacado y citas |
+| `--fs-lg` | `1.25rem` | Títulos de tarjeta |
+| `--fs-xl` | `2rem` | Cifras y títulos de bloque |
+| `--fs-2xl` | `2.5rem` | Porcentaje del comparador de gustos |
+| `--fs-h1` / `--fs-h2` / `--fs-h3` | `clamp(...)` | Títulos, fluidos según el ancho |
+| `--fs-hero` | `clamp(2.8rem, 7vw, 5.5rem)` | Título de la portada |
+
 ### Iconografía
 
-No se utiliza una librería de íconos en Sprint 1. Los enlaces se presentan como texto para priorizar claridad y accesibilidad.
+**No se usa ninguna librería de íconos.** El sitio se apoya en los glifos que ya venía usando (flechas `←` `→`, los números `01`-`04` de la portada y algunos emojis en las interacciones), con un criterio único: todo glifo decorativo va envuelto en `<span class="icon" aria-hidden="true">`.
+
+```html
+<a href="index.html" class="hero-button hero-button--light">
+  <span class="icon" aria-hidden="true">←</span> Volver al inicio
+</a>
+```
+
+El `aria-hidden` es lo importante: sin él, un lector de pantalla anuncia "flecha izquierda Volver al inicio". El tamaño se controla con `--icon-size`, así que los íconos escalan con el texto que acompañan.
 
 ### Breakpoints
 
-| Nombre | Ancho | Dispositivo de referencia |
+Enfoque **desktop-first**: cada bloque `@media (max-width: …)` ajusta lo que dejó el anterior.
+
+| Nombre | Ancho | Qué cambia |
 |---|---|---|
-| Mobile | `400px` | Celular |
-| Tablet | `900px` | Tablet / celular apaisado |
-| Desktop | `1200px` | Escritorio |
+| Desktop | `1200px` | La grilla de servicios baja de 4 a 3 columnas; el hero reduce su alto mínimo |
+| Tablet | `900px` | Todo pasa a una columna; **el header se apila** y los widgets de perfil reducen su padding |
+| Mobile | `400px` | Se achican el gutter, el avatar y la profundidad del carrusel; los widgets reducen el padding otra vez |
+
+El apilado del header vive en 900px y no en 400px a propósito: el logo mide hasta 15rem y compite con el menú, así que en un celular de 412px el encabezado desbordaba.
 
 ### Cómo crear un perfil
 
-Todos los perfiles deben reutilizar `css/base.css` y `css/nav.css`. Para mantener la identidad visual, no se deben inventar colores directamente en cada HTML.
+Todos los perfiles cargan `css/base.css`, `css/nav.css` y `css/perfil.css`, **en ese orden** (los dos últimos usan los tokens que define el `:root` de `base.css`). No se inventan colores ni tamaños en el HTML: salen todos de las variables.
 
-Estructura mínima recomendada:
+Estructura del template que comparten los 5 perfiles:
 
 ```html
 <main class="site-main">
 	<div class="container">
-		<section class="profile-intro">
-			<img class="profile-photo" src="img/perfiles/nombre-apellido.jpg" alt="Foto de Nombre Apellido">
-			<p class="eyebrow">Perfil del equipo</p>
-			<h1>Nombre Apellido</h1>
-			<p>Descripción breve del integrante.</p>
+		<nav class="profile-nav-bar" aria-label="Navegación de retorno">…</nav>
+
+		<section class="profile-intro profile-header-card">
+			<div class="profile-avatar-container">
+				<img class="profile-photo" width="1024" height="1024"
+				     src="img/perfiles/nombre-apellido.jpg" alt="Avatar de Nombre Apellido">
+			</div>
+			<div class="profile-main-info">
+				<p class="eyebrow">Perfil del equipo</p>
+				<h1>Nombre Apellido</h1>
+				<ul class="profile-meta">
+					<li><strong>Ciudad:</strong> …</li>
+					<li><strong>Edad:</strong> …</li>
+				</ul>
+			</div>
 		</section>
+
+		<!-- Habilidades, películas y discos: 3 service-card -->
+		<section class="profile-details-grid" aria-label="Información del perfil">…</section>
+
+		<!-- La interacción JS propia, en una tarjeta destacada -->
+		<section class="service-card service-card--featured mi-widget">…</section>
+
+		<nav class="profile-pagination" aria-label="Navegación entre compañeros">…</nav>
 	</div>
 </main>
 ```
+
+Si tu interacción necesita un contenedor propio, sumá su clase al grupo de widgets de `css/perfil.css` en lugar de repetir el bloque de `margin-top`, `border-radius` y `padding`. Las barras de progreso ya tienen un componente compartido: `.progress-track` con un `.progress-fill` adentro.
 
 Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clases existentes y variables de `:root`, por ejemplo `service-card--featured`, `hero-button` y `profile-photo`. Si se necesita una nueva variante, se agrega primero a `css/base.css` para que pueda reutilizarla todo el equipo.
 
@@ -209,8 +263,18 @@ Las fotos se guardan en `img/perfiles/`. Para cambiar la apariencia se usan clas
 - Los controles interactivos tienen foco visible y nombres comprensibles.
 - El buscador tiene etiqueta accesible y el carrusel comunica su posición con `aria-live`.
 - Se respeta `prefers-reduced-motion` para reducir las transiciones.
-- La portada se probó en 400px, 768px y 1200px sin overflow horizontal.
+- Los glifos decorativos llevan `aria-hidden="true"` para que no los lean los lectores de pantalla.
 - Las fotos de perfiles deben tener texto alternativo y los controles deben poder usarse con teclado y tacto.
+- Las imágenes declaran `width` y `height` para que no salte el layout mientras cargan.
+
+**Cómo probar el responsive.** Las 7 páginas se verificaron en los 3 breakpoints y en anchos intermedios (412px, 600px, 768px) sin overflow horizontal ni errores de consola. Para repetir la prueba, abrir cada página y ejecutar en la consola del navegador:
+
+```js
+[...document.querySelectorAll('body *')]
+  .filter(el => el.getBoundingClientRect().right > document.documentElement.clientWidth + 1)
+```
+
+Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho de un celular común y es donde el header se rompía antes del Sprint 3.
 
 ---
 

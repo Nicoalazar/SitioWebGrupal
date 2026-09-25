@@ -26,7 +26,7 @@
           <li><a href="bitacora.html" aria-current="page">Bitácora</a></li>
         </ul>
       </nav>
-      <img class="site-logo" src="img/logo-agencia.png.jpg"
+      <img class="site-logo" width="597" height="111" src="img/logo-agencia.png.jpg"
         alt="Buenos Aires Aprende y Agencia de Habilidades para el Futuro">
     </div>
   </header>
@@ -40,6 +40,86 @@
       </p>
 
       <!-- Las entradas se agregan en orden cronológico inverso: la más reciente arriba -->
+
+      <article class="bitacora-entry">
+        <time datetime="2026-09-25">25 de septiembre de 2026</time>
+        <h2>Sprint 3 — Sistema de diseño y responsive</h2>
+
+        <h3>Problemas encontrados y cómo los resolvimos</h3>
+        <ul>
+          <li>
+            <strong>El header se rompía en celulares reales.</strong> Solo se apilaba por debajo de 400px,
+            pero el logo mide hasta 15rem y competía con el menú en una sola fila. En un Pixel 7 (412px)
+            el encabezado desbordaba. Movimos el apilado al breakpoint de 900px y le agregamos
+            <code>flex-wrap</code> a la fila como red de seguridad.
+          </li>
+          <li>
+            <strong>Las tarjetas laterales del carrusel se salían de la pantalla.</strong> Nos costó
+            encontrarlo porque <code>js/portada.js</code> escribía el <code>transform</code> con un
+            <code>translateZ(220px)</code> fijo directamente en el atributo <code>style</code>, así que
+            pisaba cualquier valor del CSS y los cambios de hoja de estilos no tenían ningún efecto.
+            Pasamos esa distancia a la variable <code>--carousel-depth</code>, que baja a 150px en 900px
+            y a 130px en 400px, y ahora el JS la lee en vez de tenerla escrita.
+          </li>
+          <li>
+            <strong>El avatar se comía media tarjeta en mobile.</strong> Con 8rem fijos ocupaba más del 50%
+            del ancho de cada tarjeta del carrusel a 400px. Lo bajamos a 5.5rem solo en ese breakpoint.
+          </li>
+          <li>
+            <strong>Faltaba el breakpoint de 1200px</strong> que pide la consigna. Lo agregamos con una
+            función concreta: la grilla de servicios ahora baja de 4 a 3 columnas ahí, y recién a 2 en
+            900px y a 1 en 400px.
+          </li>
+          <li>
+            <strong>El alto del contenido dependía de un número mágico</strong>
+            (<code>calc(100vh - 150px)</code>), que quedaba desfasado justo cuando el header se apilaba.
+            Lo reemplazamos por un <code>body</code> en columna con el main flexible.
+          </li>
+        </ul>
+
+        <h3>Decisiones</h3>
+        <ul>
+          <li>
+            Tokenizamos la escala tipográfica: había 31 <code>font-size</code> sueltos con seis grupos de
+            valores casi iguales (0,8 y 0,85rem; 0,9 y 0,95rem; 1 y 1,05rem). Ahora son siete tokens.
+          </li>
+          <li>
+            Sacamos los 9 colores hardcodeados de <code>css/perfil.css</code> a tokens de feedback
+            (acierto, error, bug) y eliminamos los 6 <code>!important</code> que había: estaban solo para
+            ganarle al <code>:hover</code>, y se resolvió acotando ese selector.
+          </li>
+          <li>
+            Las cinco interacciones JS repetían el mismo contenedor cinco veces, y los botones de cine y
+            música eran idénticos carácter por carácter. Los agrupamos por selector en lugar de renombrar
+            clases, porque el JS depende de esos nombres.
+          </li>
+          <li>
+            <strong>Iconografía:</strong> decidimos no sumar una librería de íconos. Envolvimos las flechas
+            y los emojis que ya usábamos en un componente <code>.icon</code> con
+            <code>aria-hidden="true"</code>, porque un lector de pantalla leía "flecha izquierda Volver al
+            inicio".
+          </li>
+        </ul>
+
+        <h3>Cómo lo verificamos</h3>
+        <ul>
+          <li>
+            Automatizamos la prueba con el navegador en modo headless: las 7 páginas en 400, 412, 600, 768,
+            900, 1200 y 1440px, revisando que ningún elemento se salga del viewport y que no haya errores
+            en consola. Las 49 combinaciones dan limpio.
+          </li>
+          <li>
+            Probamos también las 5 interacciones y el carrusel después del refactor, para confirmar que
+            mover CSS no rompiera ningún selector que usa el JavaScript.
+          </li>
+        </ul>
+
+        <h3>Próximos pasos</h3>
+        <ul>
+          <li>Completar en el README las funciones JS de Christian y Fernando, que siguen con el texto de ejemplo.</li>
+          <li>Sacar las capturas de pantalla de las cinco interacciones para la sección 8 del README.</li>
+        </ul>
+      </article>
 
       <article class="bitacora-entry">
         <time datetime="2026-09-22">22 de septiembre de 2026</time>
