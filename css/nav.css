@@ -47,7 +47,7 @@
   max-height: 3.5rem;
   max-width: min(100%, 15rem);
   object-fit: contain;
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-xs) var(--space-sm);
 }
 
 /* --------------------------------------------------------------------------

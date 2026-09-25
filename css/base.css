@@ -92,6 +92,9 @@
   --space-xl: 3rem;
   --gutter: var(--space-md);
   --max-width: 1200px;
+  /* Relleno de botones, opciones e input de búsqueda. Antes había seis
+     valores casi iguales (0.6/0.65/0.7/0.75rem por 1/1.2/1.25rem). */
+  --pad-control: 0.7rem 1.2rem;
 
   /* Radios */
   --radius-sm: 0.35rem;
@@ -274,7 +277,7 @@ code {
   display: inline-block;
   font-weight: 700;
   margin-top: var(--space-md);
-  padding: 0.75rem 1.25rem;
+  padding: var(--pad-control);
   text-decoration: none;
 }
 
@@ -562,7 +565,7 @@ code {
   color: var(--color-input-text);
   font: inherit;
   min-width: min(100%, 18rem);
-  padding: 0.7rem 1rem;
+  padding: var(--pad-control);
 }
 .member-search::placeholder {
   color: var(--color-placeholder);
@@ -676,7 +679,7 @@ img.profile-photo {
   cursor: pointer;
   font: inherit;
   font-weight: 700;
-  padding: 0.65rem 1rem;
+  padding: var(--pad-control);
 }
 
 .carousel-button:hover,
@@ -820,7 +823,7 @@ img.profile-photo {
 
   .hero {
     min-height: 0;
-    padding: 2rem 1.25rem;
+    padding: var(--space-lg) var(--space-md);
   }
 
   .feature-grid {
