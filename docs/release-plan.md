@@ -102,12 +102,12 @@ Repetir por cada uno de los 5 integrantes (una tarea/issue por perfil):
 ## Sprint 3 — Sistema de diseño y responsive · **Lun 21/09 → Mié 23/09**
 **Dependencia:** Sprints 1 y 2 (portada + todos los perfiles ya maquetados).
 
-- [ ] Auditar CSS: eliminar duplicación, mover todo lo repetido a `base.css`, confirmar que las variables de color/tipografía se usan en TODAS las páginas (no solo portada)
-- [ ] Implementar breakpoints obligatorios: 400px, 900px, 1200px
-- [ ] Testear cada página en los 3 breakpoints + un par de anchos intermedios (no solo los exactos — ahí es donde aparecen los overflows)
-- [ ] Revisar iconografía (si se usa) y consistencia de espaciados/márgenes entre páginas
-- [ ] Ajustar imágenes/avatares para que no rompan el layout en mobile
-- [ ] Actualizar bitácora: problemas de responsive encontrados y cómo se resolvieron (esto es contenido real de bitácora, no relleno)
+- [x] Auditar CSS: eliminar duplicación, mover todo lo repetido a `base.css`, confirmar que las variables de color/tipografía se usan en TODAS las páginas (no solo portada)
+- [x] Implementar breakpoints obligatorios: 400px, 900px, 1200px
+- [x] Testear cada página en los 3 breakpoints + un par de anchos intermedios (no solo los exactos — ahí es donde aparecen los overflows)
+- [x] Revisar iconografía (si se usa) y consistencia de espaciados/márgenes entre páginas
+- [x] Ajustar imágenes/avatares para que no rompan el layout en mobile
+- [x] Actualizar bitácora: problemas de responsive encontrados y cómo se resolvieron (esto es contenido real de bitácora, no relleno)
 
 **Acceptance criteria:** cero overflow horizontal, cero texto superpuesto, en los 3 breakpoints, en las 7 páginas del sitio (portada + 5 perfiles + bitácora).
 

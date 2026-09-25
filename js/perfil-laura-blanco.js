@@ -61,12 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (item.bug) {
       found += 1;
       button.classList.add('is-bug');
-      result.textContent = `🐞 Bug reportado. ${item.detail}`;
+      result.innerHTML = `<span class="icon" aria-hidden="true">🐞</span> Bug reportado. ${item.detail}`;
       feedback.textContent = `¡Bien! ${item.detail}`;
     } else {
       falsePositives += 1;
       button.classList.add('is-ok');
-      result.textContent = '✓ Este dato está bien.';
+      result.innerHTML = '<span class="icon" aria-hidden="true">✓</span> Este dato está bien.';
       feedback.textContent = 'Falso positivo: ese dato funciona correctamente.';
     }
 
