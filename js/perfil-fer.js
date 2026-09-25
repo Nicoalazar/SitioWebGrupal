@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const fotoHTML = profilePhoto.outerHTML;
 
-        const textoHTML = `<div class="profile-photo-flip-message">Pase nomás! Sientese como en casa y salú! 🍷</div>`;
+        const textoHTML = `<div class="profile-photo-flip-message">Pase nomás! Sientese como en casa y salú! <span class="icon" aria-hidden="true">🍷</span></div>`;
 
         let mostrandoTexto = false;
 
