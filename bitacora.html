@@ -43,6 +43,46 @@
       <!-- Las entradas conservan su fecha; las decisiones de diseño se registran por separado. -->
 
       <article class="bitacora-entry">
+        <time datetime="2026-09-26">26 de septiembre de 2026</time>
+        <h2>Sprint 4 — Botones invisibles al pasar el mouse</h2>
+
+        <h3>Problema encontrado</h3>
+        <ul>
+          <li>
+            Recorriendo los perfiles notamos que los botones con fondo claro desaparecían al pasar el mouse
+            por encima: por ejemplo, «Perfil anterior (Laura Olivera)» en el perfil de Fernando quedaba del
+            mismo color que el fondo de la página.
+          </li>
+          <li>
+            La causa estaba en <code>css/base.css</code>: el <code>:hover</code> de <code>.hero-button</code>
+            cambiaba el fondo a <code>--color-surface</code>. Con la paleta clara de la primera propuesta
+            esa variable era un color claro, pero con el diseño 2 pasó a ser <code>#171d4b</code>, un azul
+            noche casi igual al fondo. El texto del botón es <code>--color-primary</code>
+            (<code>#111746</code>), así que quedaba texto oscuro sobre fondo oscuro.
+          </li>
+          <li>
+            No era un problema de una página: afectaba a todos los <code>.hero-button</code> del sitio
+            (navegación entre perfiles, «Volver al inicio», «Ver bitácora», los botones de las interacciones
+            y los de la portada).
+          </li>
+        </ul>
+
+        <h3>Cómo lo resolvimos</h3>
+        <ul>
+          <li>
+            El hover y el foco de teclado ahora usan <code>--color-feature-soft</code> (<code>#9eece7</code>),
+            un turquesa claro que ya estaba en la paleta, y fijan el texto en <code>--color-primary</code>
+            para que siga siendo legible.
+          </li>
+          <li>
+            Aprendizaje: al cambiar la paleta en el Sprint 1 revisamos los colores base pero no los estados
+            <code>:hover</code> que dependían de ellos. Cuando se cambia un token hay que buscar todos los
+            lugares donde se usa, no solo el valor en <code>:root</code>.
+          </li>
+        </ul>
+      </article>
+
+      <article class="bitacora-entry">
         <time datetime="2026-09-25">25 de septiembre de 2026</time>
         <h2>Sprint 4 — Auditoría local de navegación y JavaScript</h2>
 
