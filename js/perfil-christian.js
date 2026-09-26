@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const buttons = document.querySelectorAll('.cinema-btn');
+    const buttons = document.querySelectorAll('.cinema-selector .cinema-btn');
     const quoteEl = document.getElementById('cinema-quote');
     const questionEl = document.getElementById('trivia-question');
     const optionsEl = document.getElementById('trivia-options');
     const feedbackEl = document.getElementById('trivia-feedback');
-    const restartButton = document.getElementById('cinema-restart');
+    const resetBtn = document.getElementById('trivia-reset-btn');
 
     let typewriterTimer = null;
 
@@ -59,13 +59,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 28);
     }
 
+    function resetTrivia() {
+        feedbackEl.textContent = '';
+        feedbackEl.className = 'trivia-result';
+        if (resetBtn) resetBtn.style.display = 'none';
+
+        const allButtons = optionsEl.querySelectorAll('.trivia-opt-btn');
+        allButtons.forEach(b => {
+            b.disabled = false;
+            b.classList.remove('is-correct', 'is-wrong');
+        });
+    }
+
     function displayMovie(movieKey) {
         const movie = moviesData[movieKey];
         if (!movie) return;
 
-        feedbackEl.textContent = '';
-        feedbackEl.className = 'trivia-result';
-
+        resetTrivia();
         runTypewriter(movie.quote);
 
         questionEl.textContent = movie.question;
@@ -90,10 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     feedbackEl.textContent = 'No era esa opción, pero vale el intento.';
                     feedbackEl.className = 'trivia-result error';
                 }
+
+                if (resetBtn) resetBtn.style.display = 'inline-block';
             });
 
             optionsEl.appendChild(btn);
         });
+    }
+
+    // Event listener del botón reset
+    if (resetBtn) {
+        resetBtn.addEventListener('click', resetTrivia);
     }
 
     buttons.forEach(btn => {
@@ -102,11 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('is-active');
             displayMovie(btn.dataset.movie);
         });
-    });
-
-    restartButton.addEventListener('click', () => {
-        const activeMovie = document.querySelector('.cinema-btn.is-active');
-        displayMovie(activeMovie.dataset.movie);
     });
 
     // Inicializar en la primera película
