@@ -286,9 +286,11 @@ code {
   color: var(--color-primary);
 }
 
+/* El hover tiene que seguir siendo claro: el texto del botón es --color-primary (oscuro) */
 .hero-button:hover,
 .hero-button:focus-visible {
-  background: var(--color-surface);
+  background: var(--color-feature-soft);
+  color: var(--color-primary);
 }
 
 .hero-preview {

@@ -326,6 +326,11 @@
     min-height: 1.5rem;
 }
 
+/* El botón arranca con hidden y el JS lo muestra al responder */
+.trivia-reset {
+    margin-top: var(--space-md);
+}
+
 .trivia-result.success {
     color: var(--color-success);
 }
