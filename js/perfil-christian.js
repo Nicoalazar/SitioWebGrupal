@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionEl = document.getElementById('trivia-question');
     const optionsEl = document.getElementById('trivia-options');
     const feedbackEl = document.getElementById('trivia-feedback');
+    const restartButton = document.getElementById('cinema-restart');
 
     let typewriterTimer = null;
 
@@ -101,6 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('is-active');
             displayMovie(btn.dataset.movie);
         });
+    });
+
+    restartButton.addEventListener('click', () => {
+        const activeMovie = document.querySelector('.cinema-btn.is-active');
+        displayMovie(activeMovie.dataset.movie);
     });
 
     // Inicializar en la primera película
