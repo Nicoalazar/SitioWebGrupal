@@ -36,7 +36,8 @@
       <h1>Bitácora de desarrollo</h1>
       <p>
         Registro de decisiones, dificultades y cambios durante el desarrollo del sitio, con su fecha real.
-        Cada sprint suma al menos una entrada con fecha real.
+        Cada sprint suma al menos una entrada con fecha real. Las entradas están ordenadas de la más reciente
+        a la más antigua.
       </p>
 
       <!-- Las entradas conservan su fecha; las decisiones de diseño se registran por separado. -->
@@ -155,6 +156,44 @@
       </article>
 
       <article class="bitacora-entry">
+        <time datetime="2026-09-24">24 de septiembre de 2026</time>
+        <h2>Sprint 2 — Perfiles individuales y contenido interactivo</h2>
+
+        <h3>Decisiones</h3>
+        <ul>
+          <li>Cada integrante armó su página sobre el mismo template (<code>profile-header-card</code>, tres
+            <code>service-card</code> con habilidades, películas y discos, y una tarjeta destacada para la
+            interacción) y trabajó en su propia rama con Pull Request hacia la rama del sprint.</li>
+          <li>Acordamos que ninguna interacción se repitiera entre perfiles. Quedaron cinco distintas: el
+            comparador de gustos de Nicolás, «Encontrá el bug» de Laura Blanco, la trivia de cine de
+            Christian (<em>Forrest Gump</em>, <em>Big Fish</em> y <em>Flores de Fuego</em>), el test de
+            resolución bajo presión de Laura Olivera y el rincón musical con foto giratoria de Fernando.</li>
+          <li>Los avatares se guardan en <code>img/perfiles/</code> y cada uno se integró en la tarjeta de la
+            portada y en su perfil con la clase <code>.profile-photo</code> (por ejemplo,
+            <code>perfil-christian-albornoz.jpg</code>).</li>
+          <li>Movimos los estilos de las interacciones a un archivo compartido, <code>css/perfil.css</code>, en
+            lugar de escribirlos dentro de cada HTML.</li>
+        </ul>
+
+        <h3>Dificultades</h3>
+        <ul>
+          <li>El perfil de Fernando se había armado por fuera del template: tuvimos que alinearlo a la estructura
+            compartida, a la paleta y al orden de la paginación entre compañeros.</li>
+          <li>En ese proceso se borraron por error las películas y los discos de Fernando, y el script de su
+            interacción no estaba enlazado en el HTML. Recuperamos el contenido y conectamos
+            <code>js/perfil-fer.js</code>.</li>
+          <li>Al mezclar las ramas de las fotos quedó un archivo de avatar duplicado de Fernando; lo eliminamos
+            para que el perfil use una sola imagen.</li>
+        </ul>
+
+        <h3>Próximos pasos</h3>
+        <ul>
+          <li>Verificar la navegación y el comportamiento responsivo en resoluciones de 400px, 900px y 1200px.</li>
+          <li>Revisar la integración completa con los perfiles del resto del equipo en la rama colectiva.</li>
+        </ul>
+      </article>
+
+      <article class="bitacora-entry">
         <time datetime="2026-09-22">22 de septiembre de 2026</time>
         <h2>Decisión de diseño — Sprint 1</h2>
 
@@ -163,6 +202,33 @@
           <li>Por medio del grupo de WhatsApp del equipo, aprobamos el diseño número 2
             (<strong>sprint1-2daopcion</strong>) como propuesta visual para continuar el proyecto.</li>
           <li>Dejamos sin efecto la propuesta anterior y continuamos el trabajo desde la rama seleccionada.</li>
+          <li>El cambio reemplazó la paleta clara de la primera propuesta (amarillo sobre fondo marfil) por una
+            paleta oscura: azul noche <code>#111746</code>, violeta <code>#342275</code>, acento turquesa
+            <code>#53d6d2</code> sobre fondo <code>#090d2d</code>. Es la que figura en la guía de estilos del
+            README.</li>
+        </ul>
+      </article>
+
+      <article class="bitacora-entry">
+        <time datetime="2026-09-21">21 de septiembre de 2026</time>
+        <h2>Sprint 1 — Portada y sistema visual base</h2>
+
+        <h3>Decisiones</h3>
+        <ul>
+          <li>Elegimos una paleta de azul profundo, azul medio, amarillo y fondo marfil para transmitir identidad de
+            equipo sin perder contraste. (Al día siguiente la reemplazamos: ver la decisión de diseño del 22/09.)</li>
+          <li>Elegimos <strong>Space Grotesk</strong> para títulos y <strong>DM Sans</strong> para textos: la primera
+            aporta personalidad y la segunda mantiene la lectura cómoda.</li>
+          <li>Separamos la navegación en <code>css/nav.css</code> para copiar la misma estructura en portada, perfiles y
+            bitácora.</li>
+          <li>Implementamos un buscador de integrantes en la portada. Filtra las tarjetas mientras se escribe y muestra
+            un estado vacío si no hay coincidencias.</li>
+        </ul>
+
+        <h3>Próximos pasos</h3>
+        <ul>
+          <li>Agregar los datos y contenidos de las cinco páginas individuales durante el Sprint 2.</li>
+          <li>Probar la navegación y el diseño en 400px, 900px y 1200px.</li>
         </ul>
       </article>
 
@@ -200,50 +266,6 @@
         <ul>
           <li>Cada integrante hace su primer commit agregando su nombre y perfil de GitHub al README.</li>
           <li>Sprint 1: definir paleta y Google Fonts, construir la portada y el componente de navegación.</li>
-        </ul>
-      </article>
-
-      <article class="bitacora-entry">
-        <time datetime="2026-09-21">21 de septiembre de 2026</time>
-        <h2>Sprint 1 — Portada y sistema visual base</h2>
-
-        <h3>Decisiones</h3>
-        <ul>
-          <li>Elegimos una paleta de azul profundo, azul medio, amarillo y fondo marfil para transmitir identidad de
-            equipo sin perder contraste.</li>
-          <li>Elegimos <strong>Space Grotesk</strong> para títulos y <strong>DM Sans</strong> para textos: la primera
-            aporta personalidad y la segunda mantiene la lectura cómoda.</li>
-          <li>Separamos la navegación en <code>css/nav.css</code> para copiar la misma estructura en portada, perfiles y
-            bitácora.</li>
-          <li>Implementamos un buscador de integrantes en la portada. Filtra las tarjetas mientras se escribe y muestra
-            un estado vacío si no hay coincidencias.</li>
-        </ul>
-
-        <h3>Próximos pasos</h3>
-        <ul>
-          <li>Agregar los datos y contenidos de las cinco páginas individuales durante el Sprint 2.</li>
-          <li>Probar la navegación y el diseño en 400px, 900px y 1200px.</li>
-        </ul>
-      </article>
-
-      <article class="bitacora-entry">
-        <time datetime="2026-09-24">24 de septiembre de 2026</time>
-        <h2>Sprint 2 — Perfiles individuales y contenido interactivo</h2>
-
-        <h3>Decisiones</h3>
-        <ul>
-          <li>Integramos el avatar estandarizado (<code>perfil-christian-albornoz.jpeg</code>) en la tarjeta de la
-            portada y en el perfil individual respetando la clase <code>.profile-photo</code>.</li>
-          <li>Estructuramos la página de perfil personal (<code>christian-albornoz.html</code>) manteniendo la
-            consistencia tipográfica y el esquema de color definido en el Sprint 1.</li>
-          <li>Implementamos una trivia interactiva en JavaScript sobre cine clásico (<em>Forrest Gump</em>, <em>Big
-              Fish</em> y <em>Flores de Fuego</em>) con validación de respuestas y feedback dinámico en el DOM.</li>
-        </ul>
-
-        <h3>Próximos pasos</h3>
-        <ul>
-          <li>Verificar la navegación y el comportamiento responsivo en resoluciones de 400px, 900px y 1200px.</li>
-          <li>Revisar la integración completa con los perfiles del resto del equipo en la rama colectiva.</li>
         </ul>
       </article>
     </div>
