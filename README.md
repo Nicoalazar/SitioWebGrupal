@@ -56,10 +56,10 @@ El sitio se compone de:
 
 | Rol | Responsable | Alcance |
 |---|---|---|
-| Portada (`index.html`) | No quedó registrado | Estructura, contenido y función JS de la portada |
+| Portada (`index.html`) | Laura Olivera | Estructura, contenido y función JS de la portada |
 | Paleta y tipografía | Laura Olivera | Definir colores, Google Fonts e iconografía; mantener `css/base.css` |
 | Template de perfil | No quedó registrado | Diseñar la estructura base que reutilizan todos los perfiles |
-| Bitácora y documentación | No quedó registrado | Mantener `bitacora.html` y el README actualizados por sprint |
+| Bitácora y documentación | Nicolás Zalazar | Mantener `bitacora.html` y el README actualizados por sprint |
 | Página individual | Cada integrante | Cada persona es dueña de su propio perfil y su función JS |
 
 **Canal de comunicación del equipo:** grupo de WhatsApp
@@ -294,6 +294,7 @@ Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho 
 **Función:** Comparador de gustos
 **Archivo:** `js/perfil-nicolas.js`
 **Qué hace:** muestra mis películas y discos favoritos de a una tarjeta por vez; el visitante responde "Me gusta" o "No es lo mío" en cada una y, al terminar el mazo, la página calcula el porcentaje de coincidencia con una barra de progreso y un mensaje que cambia según el nivel de compatibilidad. Incluye un botón para reiniciar el recorrido.
+**Por qué la elegí:** una lista de favoritos se lee y se olvida; convertirla en una comparación hace que el visitante se detenga en cada película y disco, y le da un resultado propio al final.
 
 ![Captura](img/capturas/perfil-nicolas.png)
 
@@ -311,6 +312,7 @@ Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho 
 **Función:** Espacio cinéfilo: citas y trivia
 **Archivo:** `js/perfil-christian.js`
 **Qué hace:** el visitante elige *Forrest Gump*, *Big Fish* o *Flores de Fuego (Hana-bi)*. La actividad escribe una cita de la película letra por letra y propone una pregunta con tres respuestas; por ejemplo, pregunta por el año y protagonista de *Forrest Gump*, quién dirigió *Big Fish* o el premio de *Hana-bi*. Al responder, desactiva las tres opciones y señala si la respuesta fue correcta. Elegir otra película o pulsar «Volver a intentar» limpia el feedback y vuelve a habilitar una pregunta.
+**Por qué la elegí:** el cine es uno de mis intereses principales y quise compartir películas que me marcaron de una forma activa: la cita escrita en tiempo real presenta cada película y la trivia invita al visitante a poner a prueba lo que sabe de ella.
 
 ![Captura de la trivia cinéfila de Christian](img/capturas/perfil-christian.png)
 
@@ -355,7 +357,7 @@ Registra, por sprint, las decisiones tomadas, los problemas encontrados y cómo 
 
 | Herramienta | Modelo | Plan | Experiencia previa del equipo |
 |---|---|---|---|
-| Claude Code | Claude Opus 5 | Pago (plan Premium; nombre comercial exacto no registrado) | Uso frecuente antes de este TP |
+| Claude Code | Claude Opus 5 y Claude Opus 5.5 | Pago | Uso frecuente antes de este TP |
 | Gemini | Gemini (versión exacta no identificada) | Gratuito | Uso frecuente antes de este TP |
 | GitHub Copilot Chat | Modelo asignado a esta sesión; identificador no registrado | Free | Usado en la revisión del Sprint 4; experiencia previa específica no registrada |
 
@@ -364,7 +366,7 @@ Registra, por sprint, las decisiones tomadas, los problemas encontrados y cómo 
 - **Planificación y documentación:** Claude Code ayudó a generar el plan de sprints (`docs/release-plan.md`) y el esqueleto inicial del README a partir de la consigna; el equipo revisó y ajustó esos documentos.
 - **Código y diseño:** Claude Code asistió en parte del carrusel de `js/portada.js` y en interacciones JavaScript de los perfiles.
 - **Imágenes:** Gemini generó los cinco avatares a partir de imágenes adjuntas. Prompt informado por el equipo: «contruye un avatar en base a la imagen adjuntada».
-- **Debugging y QA:** no se registró una consulta concreta de debugging a Claude Code o Gemini. Para el cierre del Sprint 4, GitHub Copilot asistió esta revisión del navegador, las interacciones y los errores de consola en las siete páginas; no se encontraron errores JS.
+- **Debugging y QA:** GitHub Copilot asistió la auditoría del navegador del 25/09: interacciones y errores de consola en las siete páginas, sin errores JS. En la revisión cruzada del 26/09, Claude Code se usó para auditar el Sprint 4 contra el plan, buscar la causa de los bugs encontrados y verificar las correcciones en el navegador en 400, 412, 900 y 1200px. Los casos concretos están en la sección siguiente.
 
 ### Imágenes y avatares generados con IA
 
@@ -377,6 +379,14 @@ No se confirmó que hubiera un aviso visible junto a cada avatar. En las página
 El equipo eligió qué diseños de avatar correspondían a cada perfil y adaptó su presentación al componente compartido: las páginas usan `.profile-photo`, dimensiones explícitas y texto alternativo, mientras CSS controla el recorte responsive. No quedó anotado qué retoques visuales se hicieron dentro de cada imagen generada.
 
 En el código, el equipo no dejó fija la profundidad del carrusel: la trasladó al token CSS `--carousel-depth` y `js/portada.js` lee ese valor para que responda a los breakpoints. Las interacciones de perfil se integraron a sus controles y contenidos concretos; el equipo comprobó sus estados en navegador. Para esta revisión se probaron las cinco actividades y se corrigió el reinicio y la visibilidad de controles.
+
+Tres casos de la revisión cruzada del 26/09 muestran cómo se repartió el trabajo entre el equipo y la IA:
+
+- **El bug lo encontramos nosotros; la IA encontró la causa.** Nicolás detectó que los botones claros desaparecían al pasar el mouse. Claude Code rastreó el problema hasta `--color-surface`: la variable había sido clara con la primera paleta y quedó azul noche con el diseño 2. El equipo validó la corrección en el navegador y pidió que el bug quedara registrado en la bitácora, cosa que la IA no había hecho por su cuenta.
+- **La IA detectó una regresión y el equipo decidió cómo resolverla.** Al revisar el commit del reinicio de la trivia, Claude Code notó que se había hecho sobre una versión vieja del perfil de Christian y que había deshecho mejoras del Sprint 3 (dimensiones de imágenes, íconos accesibles, `defer`). El equipo decidió restaurarlas conservando la lógica nueva del reinicio, en lugar de revertir el commit entero.
+- **No reescribimos la historia.** La entrada del Sprint 1 de la bitácora describe una paleta amarilla que ya no se usa. Antes de tocarla revisamos el historial de `css/base.css` y confirmamos que esa paleta existió de verdad, como primera propuesta, antes del diseño 2. Por eso la dejamos como estaba y agregamos una aclaración: la bitácora tiene que reflejar lo que pasó en su fecha.
+
+En los tres casos, la IA propuso cambios y el equipo los revisó antes de incorporarlos. Ningún commit lo hizo la IA: los commits los hizo cada integrante.
 
 ### Criterio de privacidad
 

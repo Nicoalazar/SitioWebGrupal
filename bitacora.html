@@ -44,7 +44,36 @@
 
       <article class="bitacora-entry">
         <time datetime="2026-09-26">26 de septiembre de 2026</time>
-        <h2>Sprint 4 — Correcciones de QA</h2>
+        <h2>Sprint 4 — Revisión cruzada y correcciones de QA</h2>
+
+        <h3>Cómo hicimos la revisión cruzada</h3>
+        <ul>
+          <li>
+            Después de la auditoría automatizada del 25/09, cada integrante que revisó el sitio corrigió lo que
+            encontró en su propia rama y lo integró por Pull Request:
+            <ul>
+              <li>
+                <strong>Laura Olivera</strong> (PR #25) recorrió las interacciones y corrigió los botones del
+                carrusel, el reinicio de «Encontrá el bug», la falta de reinicio en la trivia y la paginación de
+                su perfil. El detalle está en la entrada del 25/09.
+              </li>
+              <li>
+                <strong>Christian Albornoz</strong> (PR #27) rehízo el reinicio de su trivia para que no repitiera
+                la cita.
+              </li>
+              <li>
+                <strong>Nicolás Zalazar</strong> auditó el Sprint 4 contra el plan, detectó los botones invisibles
+                al pasar el mouse y encontró que el PR #27 había deshecho mejoras del Sprint 3 en el perfil de
+                Christian.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Cada revisión se hizo sobre el trabajo de otra persona. Así, lo que pasó por alto quien escribió el
+            código lo encontró otro integrante, como el hover que afectaba a todos los perfiles o la regresión del
+            perfil de Christian.
+          </li>
+        </ul>
 
         <h3>El reinicio de la trivia volvía a escribir la cita</h3>
         <ul>
@@ -177,7 +206,7 @@
           <li>
             Esta comprobación automatizada no reemplaza la revisión cruzada personal de cada integrante.
             Falta que cada persona recorra el sitio en una sesión nueva y comparta sus observaciones de
-            enlaces y fricciones de uso.
+            enlaces y fricciones de uso. (Se hizo a continuación: ver la entrada del 26/09.)
           </li>
         </ul>
       </article>
