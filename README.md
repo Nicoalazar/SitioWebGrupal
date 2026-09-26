@@ -3,7 +3,7 @@
 > **TP1 · Desarrollo de Sistemas Web · Front End · 2026 2C**
 > Sitio web grupal con portada, perfiles individuales, navegación interna y bitácora de desarrollo.
 
-🔗 **Sitio publicado:** _pendiente de deploy en Vercel (Sprint 5)_
+🔗 **Publicación:** prevista en Vercel para Sprint 5 (26/09/2026); aún no publicada al 25/09/2026.
 📋 **Tablero de tareas:** [GitHub Project](https://github.com/Nicoalazar/SitioWebGrupal/projects) · [Issues](https://github.com/Nicoalazar/SitioWebGrupal/issues)
 🗺️ **Plan de trabajo:** [docs/release-plan.md](docs/release-plan.md)
 
@@ -54,18 +54,16 @@ El sitio se compone de:
 
 ## 3. Roles del equipo
 
-<!-- Sprint 0: completar cuando el equipo acuerde la distribución -->
-
 | Rol | Responsable | Alcance |
 |---|---|---|
-| Portada (`index.html`) | [a definir] | Estructura, contenido y función JS de la portada |
+| Portada (`index.html`) | No quedó registrado | Estructura, contenido y función JS de la portada |
 | Paleta y tipografía | Laura Olivera | Definir colores, Google Fonts e iconografía; mantener `css/base.css` |
-| Template de perfil | [a definir] | Diseñar la estructura base que reutilizan todos los perfiles |
-| Bitácora y documentación | [a definir] | Mantener `bitacora.html` y el README actualizados por sprint |
+| Template de perfil | No quedó registrado | Diseñar la estructura base que reutilizan todos los perfiles |
+| Bitácora y documentación | No quedó registrado | Mantener `bitacora.html` y el README actualizados por sprint |
 | Página individual | Cada integrante | Cada persona es dueña de su propio perfil y su función JS |
 
 **Canal de comunicación del equipo:** grupo de WhatsApp
-**Frecuencia de sincronización:** [a definir — ej. una reunión breve por sprint]
+**Frecuencia de sincronización:** no quedó registrada una cadencia fija.
 
 ---
 
@@ -284,16 +282,16 @@ Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho 
 
 ### Portada
 
-**Función:** búsqueda y filtrado de integrantes
+**Nombre de la interacción:** búsqueda y filtrado de integrantes
 **Archivo:** `js/portada.js`
-**Qué hace:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
+**Descripción:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
 **Por qué la elegimos:** permite encontrar rápidamente un perfil y aporta una interacción útil para una portada con varios integrantes.
 
 ![Captura del filtro de integrantes](img/capturas/portada-funcion.png)
 
 ### Perfil — Nicolás Zalazar
 
-**Función:** Comparador de gustos
+**Nombre de la interacción:** Comparador de gustos
 **Archivo:** `js/perfil-nicolas.js`
 **Qué hace:** muestra mis películas y discos favoritos de a una tarjeta por vez; el visitante responde "Me gusta" o "No es lo mío" en cada una y, al terminar el mazo, la página calcula el porcentaje de coincidencia con una barra de progreso y un mensaje que cambia según el nivel de compatibilidad. Incluye un botón para reiniciar el recorrido.
 
@@ -306,29 +304,31 @@ Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho 
 **Qué hace:** muestra una ficha con datos de mi perfil donde cuatro tienen errores a propósito (un nombre mal escrito, un director equivocado, un año invertido y un precio negativo). El visitante hace clic en los datos que cree incorrectos: si es un bug, se tacha y se explica el error; si no, cuenta como falso positivo. Al encontrar los cuatro bugs se muestra un resumen y se puede volver a jugar.
 Por qué la elegí: trabajo como QA Tester y quise mostrar en qué consiste ese trabajo con una interacción simple.
 
-![Captura](img/capturas/perfil-laura-blanco.png)
+![Captura de la actividad Encontrá el bug de Laura Blanco](img/capturas/perfil-laura-blanco.png)
 
 ### Perfil — Christian Albornoz
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:** Espacio cinéfilo: citas y trivia
+**Archivo:** `js/perfil-christian.js`
+**Qué hace:** el visitante elige *Forrest Gump*, *Big Fish* o *Flores de Fuego (Hana-bi)*. La actividad escribe una cita de la película letra por letra y propone una pregunta con tres respuestas; por ejemplo, pregunta por el año y protagonista de *Forrest Gump*, quién dirigió *Big Fish* o el premio de *Hana-bi*. Al responder, desactiva las tres opciones y señala si la respuesta fue correcta. Elegir otra película o pulsar «Volver a intentar» limpia el feedback y vuelve a habilitar una pregunta.
 
-![Captura](img/capturas/perfil-christian.png)
+![Captura de la trivia cinéfila de Christian](img/capturas/perfil-christian.png)
 
 ### Perfil — Laura Olivera
 
 **Función:** test de resolución bajo presión
 **Archivo:** `js/perfil-laura-olivera.js`
-**Qué hace:** presenta tres situaciones con opciones, calcula un puntaje según las respuestas y muestra un perfil profesional personalizado al finalizar. También permite reiniciar el test.
+**Descripción de la interacción:** presenta tres situaciones: una falla antes de una entrega, una tarea urgente poco clara y un cambio que rompe el proyecto. Cada una ofrece tres respuestas que otorgan 3, 2 o 1 punto. La barra y el indicador muestran el avance; al responder la tercera pregunta, el puntaje total define el resultado: estratega (8–9), colaborativo (5–7) o resolutivo (3–4). «Volver a intentar» oculta el resultado, reinicia el puntaje y vuelve a la primera situación.
+**Propósito:** relacionar decisiones ante problemas urgentes con distintos enfoques de resolución y colaboración.
 
 ![Captura](img/capturas/perfil-laura-olivera.png)
 
 ### Perfil — Fernando Guevara
 
-**Función:** [nombre]
-**Archivo:** `js/[archivo].js`
-**Qué hace:** [descripción]
+**Función:** foto interactiva, fichas de discos y rincón musical
+**Archivo:** `js/perfil-fer.js`
+**Qué hace:** reúne tres controles. Al activar la foto con clic, Enter o Espacio, gira y alterna entre el retrato y un saludo. En la lista, los discos «Harvest Moon», «Reveal» y «Guess Who» despliegan u ocultan una nota personal; también responden a Enter y Espacio. En el rincón musical, los botones de esos tres discos actualizan el dato curioso mostrado y señalan cuál está seleccionado.
+**Propósito:** presentar los gustos musicales de Fernando junto con notas personales y datos breves sobre cada disco.
 
 ![Captura](img/capturas/perfil-fernando.png)
 
@@ -343,50 +343,47 @@ Registra, por sprint, las decisiones tomadas, los problemas encontrados y cómo 
 
 ## 10. Publicación en Vercel
 
-<!-- Sprint 5 -->
+**Estado:** no publicado al 25/09/2026. El plan del equipo programa el deploy en Vercel para el Sprint 5 (26/09/2026).
 
-**URL:** [pendiente]
-
-Pasos de deploy: [a documentar]
+**URL:** todavía no disponible. Cuando se publique, agregar aquí la URL de producción y probar los enlaces y breakpoints del sitio publicado.
 
 ---
 
 ## 11. Uso de IA y criterio de privacidad
 
-<!-- Sprint 4: completar con ejemplos concretos, no genéricos -->
-
 ### Herramientas y modelos utilizados
 
 | Herramienta | Modelo | Plan | Experiencia previa del equipo |
 |---|---|---|---|
-| Claude Code | Claude Opus 5 | [gratuito / pago] | [a completar] |
-| [otra] | [modelo] | [plan] | [a completar] |
+| Claude Code | Claude Opus 5 | Pago (plan Premium; nombre comercial exacto no registrado) | Uso frecuente antes de este TP |
+| Gemini | Gemini (versión exacta no identificada) | Gratuito | Uso frecuente antes de este TP |
+| GitHub Copilot Chat | Modelo asignado a esta sesión; identificador no registrado | Free | Usado en la revisión del Sprint 4; experiencia previa específica no registrada |
 
 ### En qué asistió
 
-- **Planificación:** generación del plan de sprints (`docs/release-plan.md`) y del esqueleto de README a partir de la consigna. Revisado y ajustado por el equipo.
-- **Código:** [a completar — qué funciones, qué estilos]
-- **Debugging:** [a completar]
-- **Contenido:** [a completar]
+- **Planificación y documentación:** Claude Code ayudó a generar el plan de sprints (`docs/release-plan.md`) y el esqueleto inicial del README a partir de la consigna; el equipo revisó y ajustó esos documentos.
+- **Código y diseño:** Claude Code asistió en parte del carrusel de `js/portada.js` y en interacciones JavaScript de los perfiles.
+- **Imágenes:** Gemini generó los cinco avatares a partir de imágenes adjuntas. Prompt informado por el equipo: «contruye un avatar en base a la imagen adjuntada».
+- **Debugging y QA:** no se registró una consulta concreta de debugging a Claude Code o Gemini. Para el cierre del Sprint 4, GitHub Copilot asistió esta revisión del navegador, las interacciones y los errores de consola en las siete páginas; no se encontraron errores JS.
 
 ### Imágenes y avatares generados con IA
 
-[a completar — modelo utilizado y criterio de los prompts, o "no se usaron"]
+El equipo confirmó que **los cinco avatares de perfil** se generaron con Gemini usando una imagen adjunta como referencia. La versión exacta de Gemini no quedó registrada. El criterio informado fue elegir y adaptar el diseño a las necesidades de cada perfil.
 
-- **Christian Albornoz (`perfil-christian-albornoz.jpg`):** Generada con Geminis. Prompt: "Transforma esta imagen en un avatar profesional de alta calidad".
+No se confirmó que hubiera un aviso visible junto a cada avatar. En las páginas, el texto alternativo identifica las imágenes como avatares/fotos de perfil, pero no indica que fueron generadas con IA. Este README deja explícita la herramienta y el origen para no presentar los resultados como fotografías originales.
 
 ### Qué revisamos, adaptamos o cambiamos con criterio propio
 
-[a completar con ejemplos concretos — esto es lo que sostiene la autoría del equipo]
+El equipo eligió qué diseños de avatar correspondían a cada perfil y adaptó su presentación al componente compartido: las páginas usan `.profile-photo`, dimensiones explícitas y texto alternativo, mientras CSS controla el recorte responsive. No quedó anotado qué retoques visuales se hicieron dentro de cada imagen generada.
+
+En el código, el equipo no dejó fija la profundidad del carrusel: la trasladó al token CSS `--carousel-depth` y `js/portada.js` lee ese valor para que responda a los breakpoints. Las interacciones de perfil se integraron a sus controles y contenidos concretos; el equipo comprobó sus estados en navegador. Para esta revisión se probaron las cinco actividades y se corrigió el reinicio y la visibilidad de controles.
 
 ### Criterio de privacidad
 
-[a completar — ej. uso de avatares en lugar de fotos personales, qué datos personales se decidió no publicar]
+Los avatares se generaron enviando imágenes adjuntas a Gemini; por eso no se afirma que las imágenes de origen permanecieran solo en el equipo. El sitio muestra los datos de perfil publicados por sus integrantes y no incluye domicilios ni teléfonos. No se registraron las opciones de retención o privacidad seleccionadas en Gemini.
 
 ---
 
 ## 12. Evolución del proyecto
 
-<!-- Sprint 4/5: qué se planea ampliar en los próximos TPs -->
-
-- [a completar]
+Al 25/09/2026 no hay una ampliación posterior aprobada por el equipo. La evolución para próximos TPs se definirá después de la entrega, tomando como base las observaciones de navegación y el uso de las interacciones.

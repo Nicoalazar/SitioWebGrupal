@@ -35,11 +35,44 @@
     <div class="container">
       <h1>Bitácora de desarrollo</h1>
       <p>
-        Registro cronológico de decisiones, dificultades y cambios durante el desarrollo del sitio.
+        Registro de decisiones, dificultades y cambios durante el desarrollo del sitio, con su fecha real.
         Cada sprint suma al menos una entrada con fecha real.
       </p>
 
-      <!-- Las entradas se agregan en orden cronológico inverso: la más reciente arriba -->
+      <!-- Las entradas conservan su fecha; las decisiones de diseño se registran por separado. -->
+
+      <article class="bitacora-entry">
+        <time datetime="2026-09-25">25 de septiembre de 2026</time>
+        <h2>Sprint 4 — Auditoría local de navegación y JavaScript</h2>
+
+        <h3>Cómo lo verificamos</h3>
+        <ul>
+          <li>
+            Recorrimos con un navegador automatizado la ruta Inicio → Nicolás → Laura Blanco → Christian →
+            Laura Olivera → Fernando → Inicio → Bitácora, usando los enlaces del sitio y sin usar Atrás.
+          </li>
+          <li>
+            Abrimos las siete páginas y probamos la búsqueda y el carrusel de la portada, el comparador de
+            gustos de Nicolás, la ficha de bugs de Laura Blanco, la trivia de Christian, el test de Laura
+            Olivera y el selector musical de Fernando. No aparecieron errores de JavaScript ni imágenes
+            faltantes; cada destino interno revisado cargó correctamente.
+          </li>
+          <li>
+            Confirmamos que los reinicios de las actividades de Nicolás, Laura Blanco, Christian y Laura
+            Olivera restauran su estado inicial. Unificamos el texto visible de esos botones como
+            «Volver a intentar».
+          </li>
+        </ul>
+
+        <h3>Alcance pendiente</h3>
+        <ul>
+          <li>
+            Esta comprobación automatizada no reemplaza la revisión cruzada personal de cada integrante.
+            Falta que cada persona recorra el sitio en una sesión nueva y comparta sus observaciones de
+            enlaces y fricciones de uso.
+          </li>
+        </ul>
+      </article>
 
       <article class="bitacora-entry">
         <time datetime="2026-09-25">25 de septiembre de 2026</time>

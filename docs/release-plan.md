@@ -117,15 +117,15 @@ Repetir por cada uno de los 5 integrantes (una tarea/issue por perfil):
 **Dependencia:** Sprints 1–3 cerrados funcionalmente.
 
 - [ ] Revisión cruzada completa: cada integrante navega el sitio como usuario nuevo, sin usar el botón Atrás, y reporta enlaces rotos o fricciones
-- [ ] Abrir consola del navegador en cada página y confirmar cero errores de JS
-- [ ] Cerrar la Bitácora: revisar que tenga entradas fechadas y reales de cada sprint (no una sola entrada final) — decisiones, dificultades, cambios de rumbo
-- [ ] Completar la sección de uso de IA en el README:
-  - [ ] Qué herramientas/modelos se usaron (nombrarlos)
-  - [ ] Plan gratuito o pago, y experiencia previa del equipo con esas herramientas
-  - [ ] Qué contenido/código/debugging asistieron concretamente
-  - [ ] Si se generaron avatares/imágenes con IA: modelo usado y criterio de los prompts
-  - [ ] Qué se revisó, adaptó o cambió con criterio propio antes de incorporar resultados generados — esta es la parte que separa "Propone" de "Supera" en este ítem, no la saltees
-- [ ] Completar README: capturas de pantalla de cada función JS, estructura de archivos final, guía de estilos con hex reales
+- [x] Abrir consola del navegador en cada página y confirmar cero errores de JS
+- [x] Cerrar la Bitácora: revisar que tenga entradas fechadas y reales de cada sprint (no una sola entrada final) — decisiones, dificultades, cambios de rumbo
+- [x] Completar la sección de uso de IA en el README:
+  - [x] Qué herramientas/modelos se usaron (nombrarlos)
+  - [x] Plan gratuito o pago, y experiencia previa del equipo con esas herramientas
+  - [x] Qué contenido/código/debugging asistieron concretamente
+  - [x] Si se generaron avatares/imágenes con IA: modelo usado y criterio de los prompts
+  - [x] Qué se revisó, adaptó o cambió con criterio propio antes de incorporar resultados generados — esta es la parte que separa "Propone" de "Supera" en este ítem, no la saltees
+- [x] Completar README: capturas de pantalla de cada función JS, estructura de archivos final, guía de estilos con hex reales
 - [ ] Sección "evolución" en el README: qué se planea ampliar en próximos TPs
 
 **Acceptance criteria:** README completo sin placeholders, bitácora con mínimo una entrada real por sprint, sección de IA con ejemplos concretos (no genérica tipo "usamos ChatGPT para ayudar con el código").

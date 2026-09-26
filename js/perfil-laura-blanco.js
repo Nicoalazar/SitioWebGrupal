@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     found = 0;
     falsePositives = 0;
     feedback.textContent = 'Elegí un dato para revisarlo.';
-    restartButton.hidden = true;
     renderSheet();
     updateStatus();
   }
