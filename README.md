@@ -44,11 +44,11 @@ El sitio se compone de:
 
 | Nombre | GitHub | Página individual |
 |---|---|---|
-| Nicolás Zalazar | [@Nicoalazar](https://github.com/Nicoalazar) | `nicolas-zalazar.html` _(Sprint 2)_ |
-| Laura Belén Blanco | [@LauBelen](https://github.com/LauBelen) | `laura-blanco.html` _(Sprint 2)_ |
-| Christian Albornoz | [@albor77](https://github.com/albor77) | `christian-albornoz.html` _(Sprint 2)_ |
-| Laura Olivera | [@laura108814](https://github.com/laura108814) | `laura-olivera.html` _(Sprint 2)_ |
-| Fernando Guevara | [@Fer-505](https://github.com/Fer-505) | `fernando-guevara.html` _(Sprint 2)_ |
+| Nicolás Zalazar | [@Nicoalazar](https://github.com/Nicoalazar) | [`nicolas-zalazar.html`](nicolas-zalazar.html) |
+| Laura Belén Blanco | [@LauBelen](https://github.com/LauBelen) | [`laura-blanco.html`](laura-blanco.html) |
+| Christian Albornoz | [@albor77](https://github.com/albor77) | [`christian-albornoz.html`](christian-albornoz.html) |
+| Laura Olivera | [@laura108814](https://github.com/laura108814) | [`laura-olivera.html`](laura-olivera.html) |
+| Fernando Guevara | [@Fer-505](https://github.com/Fer-505) | [`fernando-guevara.html`](fernando-guevara.html) |
 
 ---
 
@@ -282,16 +282,16 @@ Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho 
 
 ### Portada
 
-**Nombre de la interacción:** búsqueda y filtrado de integrantes
+**Función:** búsqueda y filtrado de integrantes
 **Archivo:** `js/portada.js`
-**Descripción:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
+**Qué hace:** filtra las tarjetas por nombre a medida que se escribe y muestra un mensaje cuando no hay coincidencias.
 **Por qué la elegimos:** permite encontrar rápidamente un perfil y aporta una interacción útil para una portada con varios integrantes.
 
 ![Captura del filtro de integrantes](img/capturas/portada-funcion.png)
 
 ### Perfil — Nicolás Zalazar
 
-**Nombre de la interacción:** Comparador de gustos
+**Función:** Comparador de gustos
 **Archivo:** `js/perfil-nicolas.js`
 **Qué hace:** muestra mis películas y discos favoritos de a una tarjeta por vez; el visitante responde "Me gusta" o "No es lo mío" en cada una y, al terminar el mazo, la página calcula el porcentaje de coincidencia con una barra de progreso y un mensaje que cambia según el nivel de compatibilidad. Incluye un botón para reiniciar el recorrido.
 
@@ -299,10 +299,10 @@ Debe devolver un array vacío. Conviene incluir 412px en la prueba: es el ancho 
 
 ### Perfil — Laura Belén Blanco
 
-**Función:**  Encontrá el bug
-**Archivo:** js/perfil-laura-blanco.js
+**Función:** Encontrá el bug
+**Archivo:** `js/perfil-laura-blanco.js`
 **Qué hace:** muestra una ficha con datos de mi perfil donde cuatro tienen errores a propósito (un nombre mal escrito, un director equivocado, un año invertido y un precio negativo). El visitante hace clic en los datos que cree incorrectos: si es un bug, se tacha y se explica el error; si no, cuenta como falso positivo. Al encontrar los cuatro bugs se muestra un resumen y se puede volver a jugar.
-Por qué la elegí: trabajo como QA Tester y quise mostrar en qué consiste ese trabajo con una interacción simple.
+**Por qué la elegí:** trabajo como QA Tester y quise mostrar en qué consiste ese trabajo con una interacción simple.
 
 ![Captura de la actividad Encontrá el bug de Laura Blanco](img/capturas/perfil-laura-blanco.png)
 
@@ -318,8 +318,8 @@ Por qué la elegí: trabajo como QA Tester y quise mostrar en qué consiste ese 
 
 **Función:** test de resolución bajo presión
 **Archivo:** `js/perfil-laura-olivera.js`
-**Descripción de la interacción:** presenta tres situaciones: una falla antes de una entrega, una tarea urgente poco clara y un cambio que rompe el proyecto. Cada una ofrece tres respuestas que otorgan 3, 2 o 1 punto. La barra y el indicador muestran el avance; al responder la tercera pregunta, el puntaje total define el resultado: estratega (8–9), colaborativo (5–7) o resolutivo (3–4). «Volver a intentar» oculta el resultado, reinicia el puntaje y vuelve a la primera situación.
-**Propósito:** relacionar decisiones ante problemas urgentes con distintos enfoques de resolución y colaboración.
+**Qué hace:** presenta tres situaciones: una falla antes de una entrega, una tarea urgente poco clara y un cambio que rompe el proyecto. Cada una ofrece tres respuestas que otorgan 3, 2 o 1 punto. La barra y el indicador muestran el avance; al responder la tercera pregunta, el puntaje total define el resultado: estratega (8–9), colaborativo (5–7) o resolutivo (3–4). «Volver a intentar» oculta el resultado, reinicia el puntaje y vuelve a la primera situación.
+**Por qué la elegí:** relacionar decisiones ante problemas urgentes con distintos enfoques de resolución y colaboración.
 
 ![Captura](img/capturas/perfil-laura-olivera.png)
 
@@ -328,7 +328,7 @@ Por qué la elegí: trabajo como QA Tester y quise mostrar en qué consiste ese 
 **Función:** foto interactiva, fichas de discos y rincón musical
 **Archivo:** `js/perfil-fer.js`
 **Qué hace:** reúne tres controles. Al activar la foto con clic, Enter o Espacio, gira y alterna entre el retrato y un saludo. En la lista, los discos «Harvest Moon», «Reveal» y «Guess Who» despliegan u ocultan una nota personal; también responden a Enter y Espacio. En el rincón musical, los botones de esos tres discos actualizan el dato curioso mostrado y señalan cuál está seleccionado.
-**Propósito:** presentar los gustos musicales de Fernando junto con notas personales y datos breves sobre cada disco.
+**Por qué la elegí:** presentar mis gustos musicales junto con notas personales y datos breves sobre cada disco.
 
 ![Captura](img/capturas/perfil-fernando.png)
 
@@ -386,4 +386,12 @@ Los avatares se generaron enviando imágenes adjuntas a Gemini; por eso no se af
 
 ## 12. Evolución del proyecto
 
-Al 25/09/2026 no hay una ampliación posterior aprobada por el equipo. La evolución para próximos TPs se definirá después de la entrega, tomando como base las observaciones de navegación y el uso de las interacciones.
+<!-- BORRADOR: propuesta a validar por el equipo antes de la entrega -->
+
+Estas son las líneas que el equipo propone ampliar en los próximos TPs. Cada una parte de un límite concreto que encontramos en este sitio:
+
+- **Generar los perfiles desde datos.** Hoy los cinco perfiles repiten el mismo HTML y cualquier cambio en el template hay que hacerlo cinco veces (lo vivimos al alinear el perfil de Fernando). La idea es guardar los datos de cada integrante en un JSON y armar las páginas con JavaScript a partir de ese archivo.
+- **Componentes compartidos.** El header, el footer y la paginación entre compañeros están copiados en las siete páginas. Queremos extraerlos a un único lugar para que un enlace se corrija una sola vez.
+- **Persistir el estado de las interacciones.** Guardar en `localStorage` el resultado del comparador de gustos, la trivia y el test, para que el visitante vea su puntaje anterior al volver.
+- **Pruebas automatizadas.** Convertir la verificación de overflow y de errores de consola que hicimos a mano en los Sprints 3 y 4 en un script que corra antes de cada merge.
+- **Modo claro.** La paleta ya está tokenizada en `:root`, así que agregar un tema claro con `prefers-color-scheme` no requiere tocar los componentes.
