@@ -44,9 +44,49 @@
 
       <article class="bitacora-entry">
         <time datetime="2026-09-26">26 de septiembre de 2026</time>
-        <h2>Sprint 4 — Botones invisibles al pasar el mouse</h2>
+        <h2>Sprint 4 — Correcciones de QA</h2>
 
-        <h3>Problema encontrado</h3>
+        <h3>El reinicio de la trivia volvía a escribir la cita</h3>
+        <ul>
+          <li>
+            El «Volver a intentar» de la trivia de Christian, agregado el día anterior, estaba siempre visible
+            y volvía a cargar toda la película: repetía el efecto de máquina de escribir de la cita aunque el
+            visitante solo quisiera responder otra vez.
+          </li>
+          <li>
+            Lo rehicimos como una función <code>resetTrivia()</code> que solo limpia el feedback, quita las
+            marcas de acierto y error y vuelve a habilitar las opciones. El botón aparece recién después de
+            responder.
+          </li>
+          <li>
+            Como el botón nuevo reutiliza la clase <code>.cinema-btn</code> de los selectores de película, el
+            JavaScript lo tomaba como una película más. Acotamos el selector a
+            <code>.cinema-selector .cinema-btn</code>.
+          </li>
+        </ul>
+
+        <h3>El reinicio de la trivia deshizo cambios anteriores</h3>
+        <ul>
+          <li>
+            El commit del reinicio se hizo sobre una versión vieja de <code>christian-albornoz.html</code>. Al
+            integrarlo se perdieron cambios de los Sprints 3 y 4: los <code>preconnect</code> de Google Fonts,
+            el <code>width</code>/<code>height</code> del logo y del avatar (la página volvía a saltar mientras
+            cargaban las imágenes), el <code>&lt;span class="icon" aria-hidden="true"&gt;</code> de las flechas
+            (el lector de pantalla volvía a leer «flecha izquierda») y el <code>defer</code> del script. Además,
+            el botón nuevo traía estilos escritos en el HTML.
+          </li>
+          <li>
+            Restauramos todo eso sin tocar la lógica nueva del reinicio. El botón ahora se oculta con el
+            atributo <code>hidden</code> en lugar de <code>style.display</code>, y su margen vive en la clase
+            <code>.trivia-reset</code> de <code>css/perfil.css</code>.
+          </li>
+          <li>
+            Aprendizaje: antes de empezar una tarea hay que actualizar la rama con <code>git pull</code>, y en
+            el Pull Request hay que revisar el diff completo, no solo la función que se quería cambiar.
+          </li>
+        </ul>
+
+        <h3>Botones invisibles al pasar el mouse</h3>
         <ul>
           <li>
             Recorriendo los perfiles notamos que los botones con fondo claro desaparecían al pasar el mouse
@@ -67,7 +107,7 @@
           </li>
         </ul>
 
-        <h3>Cómo lo resolvimos</h3>
+        <h3>Cómo resolvimos los botones invisibles</h3>
         <ul>
           <li>
             El hover y el foco de teclado ahora usan <code>--color-feature-soft</code> (<code>#9eece7</code>),
@@ -102,6 +142,33 @@
             Confirmamos que los reinicios de las actividades de Nicolás, Laura Blanco, Christian y Laura
             Olivera restauran su estado inicial. Unificamos el texto visible de esos botones como
             «Volver a intentar».
+          </li>
+        </ul>
+
+        <h3>Bugs encontrados y corregidos</h3>
+        <ul>
+          <li>
+            <strong>Los botones del carrusel de la portada no se leían.</strong> Tenían el texto en
+            <code>--color-surface</code> sobre fondo <code>--color-secondary</code>: con la paleta oscura
+            del diseño 2 los dos son azules oscuros. Pasamos el texto a <code>--color-text</code>. Además,
+            el estado deshabilitado solo bajaba la opacidad al 45%, así que casi no se distinguía del
+            fondo; ahora tiene fondo, borde y texto propios (<code>--color-bg-alt</code>,
+            <code>--color-card-border</code> y <code>--color-text-muted</code>).
+          </li>
+          <li>
+            <strong>La trivia de Christian no se podía volver a jugar.</strong> Al responder, las tres
+            opciones quedaban deshabilitadas y la única forma de reintentar era recargar la página o
+            cambiar de película. Agregamos un botón «Volver a intentar».
+          </li>
+          <li>
+            <strong>En «Encontrá el bug» de Laura Blanco no se podía reiniciar a mitad del juego.</strong>
+            El botón de reinicio arrancaba oculto y solo aparecía al encontrar los cuatro bugs. Lo dejamos
+            siempre visible.
+          </li>
+          <li>
+            <strong>La paginación de Laura Olivera era distinta a la del resto.</strong> Decía solo «Perfil
+            anterior» y «Siguiente perfil», mientras que los demás perfiles nombran a quién llevan. Le
+            agregamos los nombres (Christian Albornoz y Fernando Guevara).
           </li>
         </ul>
 
